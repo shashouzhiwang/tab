@@ -2,6 +2,11 @@ import { Component } from '@angular/core';
 import {NavController, NavParams, MenuController, App, Platform, ViewController,PopoverController, ModalController} from 'ionic-angular';
 
 import { BookingRecording } from './booking-recording/booking-recording.component';
+import { AddBooking } from "./pop-add-booking/add-booking.component"
+
+import { SimpleDndComponent } from './test/test.component';
+
+import * as $ from 'jquery';
 
 @Component({
   selector: 'page-booking',
@@ -18,9 +23,10 @@ export class BookingPage {
 	this.generatorTime();
   }
 
-	goBookingRecording(){	
-		this.navCtrl.push(BookingRecording);
-	} 
+	goBookingRecording(){
+		// this.navCtrl.push(BookingRecording);
+		this.navCtrl.push(SimpleDndComponent);
+	}
 
 	timePeriod:Array<Object> = [];
 	bed:Array<Object>= [{
@@ -61,7 +67,7 @@ export class BookingPage {
 	},];
 
 	generatorTime(){
-		
+
 		for(var i:any=0; i<=24; i ++){
 			var tem:any = '';
 			if(i<10){
@@ -75,6 +81,37 @@ export class BookingPage {
 		}
 	}
 
-	
+  openModel(myEvent){
+    let popover = this.popoverCtrl.create(AddBooking,{
+
+    },{
+      "cssClass":"pop-add-adding"
+    });
+    // popover.present()
+    popover.present({
+      ev: myEvent
+    });
+  }
+
+	//折叠
+  collapse(e) {
+    let bookingContent =  $(e.target).parents('.dk-bookingContent');
+    if(bookingContent.hasClass("collapse")){
+      bookingContent.animate({
+        marginLeft:'10rem'
+      },300,function(){
+        bookingContent.siblings().show();
+        bookingContent.removeClass("collapse");
+      })
+    }else{
+      bookingContent.animate({
+        marginLeft:0
+      },300,function(){
+        bookingContent.siblings().hide();
+        bookingContent.addClass("collapse");
+      })
+    }
+  }
+
 
 }

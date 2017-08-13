@@ -1,24 +1,66 @@
 @import "calendar";
+.popover-wrapper{
+  .popover-content{
+    width: 30rem;
+  }
+}
 
+.toolbar-title-ios{
+  font-size: 1rem;
+}
 
-@import "calendar";
+#bk-addBooking{
+  .scroll-content{
+    margin-left: 0 !important;
+    width: 100%;
+    .bk-list-header{
+      height: 3rem;
+      >div:first-child,>div:last-child{
+        color:#01a1ff;
+      }
+    }
+    .bk-list-content{
+      //height: 6rem;
+      .bk-list{
+        height: 3rem;
+      }
+    }
+  }
+}
+
 //折叠
 .dk-booking{
   position: relative;
+  height: 100% !important;
   .dk-sidebar{
     width: 10rem;
+    height: 100% !important;
+    position: relative;
+    padding-top:3rem;
     ion-item{
       //font-size:1rem;
       min-height:auto;
     }
-    
+
   }
   .dk-bookingContent{
+    background: white;
+    .control-btn{
+      width: 3rem;
+      height: 6rem;
+      background: #eee;
+      position: absolute;
+      z-index: 5;
+      left: 0rem;
+      top:50%;
+      margin-top: -4rem;
+    }
     position: absolute;
     width: calc(100% - 10rem);
-    margin-left:10rem; 
-    top: 0;
+    margin-left:10rem;
+    height: 100%;
     overflow: scroll;
+    top: 0;
   }
 }
 .tabHomeSearchInput{
@@ -27,7 +69,7 @@
     padding: 0 1rem !important;
     border-radius: 50px;
     font-size:1rem;
-    margin: 3rem 0;
+    margin-bottom: 3rem;
 
     input {
         color: #9B9B9B;
@@ -55,10 +97,6 @@ body{
   .fc{
         font-size: 0.6rem !important;
   }
-}
-
-ion-item.tabHomeSearchInput{
-  margin: 1rem 0;
 }
 
 page-tab-home-page {

@@ -13,6 +13,13 @@ $calendar-unit-width:8rem;
 			}
 		}
 	}
+  >div:nth-of-type(2){
+    .calendar-col-content{
+      .calendar-unit.active{
+        background: #01a1ff;
+      }
+    }
+  }
 	.calendar-col{
 		width: $calendar-unit-width;
 		.calendar-title{
@@ -43,7 +50,7 @@ $calendar-unit-width:8rem;
 				}
 			}
 		}
-		
+
 	}
 	.first-col.calendar-col{
 		.calendar-col-content{
