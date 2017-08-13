@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Ionic App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4e8ef7">
+
+  <!-- cordova.js required for cordova apps -->
+  <script src="cordova.js"></script>
+
+  <!-- un-comment this code to enable service worker
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('service worker installed'))
+        .catch(err => console.error('Error', err));
+    }
+  </script>-->
+
+  <link href="build/main.css" rel="stylesheet">
+  <style type="text/css">
+    .ub
+{
+  display: -webkit-box !important;
+  display: box !important;
+  position:relative;
+}
+
+.ub-rev
+{
+  -webkit-box-direction:reverse;
+  box-direction:reverse;
+}
+
+.ub-fh
+{
+  width:100%;
+}
+
+.ub-fv
+{
+  height:100%;
+}
+
+.ub-con
+{
+  position:absolute;
+  width:100%;
+  height:100%;
+}
+
+.ub-ac
+{
+  -webkit-box-align:center;
+  box-align:center;
+}
+.ub-ae
+{
+  -webkit-box-align:end;
+  box-align:end;
+}
+
+.ub-pc
+{
+  -webkit-box-pack:center;
+  box-pack:center;
+}
+.ub-pe
+{
+  -webkit-box-pack:end;
+  box-pack:end;
+}
+.ub-pj
+{
+  -webkit-box-pack:justify;
+  box-pack:justify;
+}
+
+.ub-ver
+{
+  -webkit-box-orient:vertical;
+  box-orient:vertical;
+}
+
+.ub-f1
+{
+  position:relative;
+  -webkit-box-flex: 1; 
+  box-flex: 1;
+}
+
+.ub-f2
+{
+  position:relative;
+  -webkit-box-flex: 2;
+  box-flex: 2; 
+}
+
+.ub-f3
+{
+  position:relative;
+  -webkit-box-flex: 3;
+  box-flex: 3;
+}
+
+.ub-f4
+{
+  position:relative;
+  -webkit-box-flex: 4;
+  box-flex: 4;
+}
+  ion-tabs .tabbar[role='tablist']{
+        box-orient: vertical ;
+        -webkit-box-orient: vertical ;
+  }
+  </style>
+</head>
+<body>
+
+  <!-- Ionic's root component and where the app will load -->
+  <ion-app></ion-app>
+
+  <!-- The polyfills js is generated during the build process -->
+  <script src="build/polyfills.js"></script>
+
+  <!-- The vendor js is generated during the build process
+       It contains all of the dependencies in node_modules -->
+  <script src="build/vendor.js"></script>
+
+  <!-- The main bundle js is generated during the build process -->
+  <script src="build/main.js"></script>
+
+</body>
+</html>

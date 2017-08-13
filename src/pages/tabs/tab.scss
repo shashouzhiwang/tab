@@ -1,0 +1,21 @@
+ion-tabs{
+	.tabbar[role='tablist']{
+			position: relative;
+			display: -webkit-box !important;
+		    display: box !important;
+		    -webkit-box-orient: vertical ;
+		    user-select:none !important;
+		    width: 2.5rem;
+		    height: 100%;
+		    border-top: none;
+		    a{
+		    	font-size: .6rem;
+    			color: black;
+    			margin: 1rem 0;
+		    }
+		    a[aria-selected=true]{
+		    	color: white;
+		    	background: #2FB8E9;
+		    }
+	}
+}

@@ -1,0 +1,85 @@
+
+<ion-content class="tab-home-artboard-page">
+	<ion-grid class="h100 w100 p_0">
+		<ion-row class="h100">
+			<ion-col col-7 class="p_0 bd_rt">
+				
+					<ion-navbar hideBackButton="true" class="bd_bt">
+						<ion-searchbar *ngIf="isSearch" (ionInput)="getItems($event)" class="f1" [class.animated]="isSearch" [class.fadeInRight]="isSearch"></ion-searchbar>
+						<ion-buttons *ngIf="isSearch" end>
+							<button ion-button clear class="f1" [class]="{'':isSearch}" (click)="cancelSearch()">取消</button>
+						</ion-buttons>
+
+						<ion-buttons *ngIf="!isSearch" start [class.animated]="!isSearch" [class.fadeInLeft]="!isSearch">
+							<button ion-button icon-only clear class="f1" (click)="goback()">
+								<ion-icon name="md-arrow-back"></ion-icon>
+							</button>
+						</ion-buttons>
+						<ion-title *ngIf="!isSearch" title-center [class.animated]="!isSearch" [class.bounceIn]="!isSearch">预约</ion-title>
+						<ion-buttons *ngIf="!isSearch" end >
+							<button ion-button icon-only clear class="f1" (click)="canSearch()">
+								<ion-icon name="md-search"></ion-icon>
+							</button>
+						</ion-buttons>
+					</ion-navbar>
+
+					<ion-content class="artBoardContent">
+						<ion-grid class="h100 w100 p_0">
+							<ion-row class="h100">
+								<ion-col col-4 class="p_0 leftContent" >
+									<ion-list>
+										<ion-item>
+											最近搜索会员
+										</ion-item>
+										<ion-item>
+											最近新增会员
+										</ion-item>
+										<ion-item>
+											最近搜索会员
+										</ion-item>
+										<ion-item>
+											最近预约会员
+										</ion-item>
+										<ion-item>
+											搜索条件一
+										</ion-item>
+										<ion-item>
+											搜索条件二
+										</ion-item>
+									</ion-list>
+								</ion-col>
+								<ion-col col-8 class="p_0">
+									<ion-content class="listContent">
+										<ion-list>
+											<ion-item>
+												<h3>黄女士 15800274113 vip</h3>
+												<p>上次消费时间：2017.07.20</p>
+											</ion-item>
+											<ion-item>
+												<h3>陈小姐 15800274113 vip</h3>
+												<p>上次消费时间：2017.07.20</p>
+											</ion-item>
+										</ion-list>
+									</ion-content>
+								</ion-col>
+							</ion-row>
+						</ion-grid>
+					</ion-content>
+			</ion-col>
+
+			<ion-col col-5 class="p_0 ">
+				<ion-navbar class="bd_bt">
+					<ion-title>记录详情</ion-title>
+				</ion-navbar>
+				<ion-content class="rightContent">
+					<ion-row class="p_0 h100 w100 noVip">
+						暂未选择会员
+					</ion-row>
+				</ion-content>
+
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+		
+
+</ion-content>

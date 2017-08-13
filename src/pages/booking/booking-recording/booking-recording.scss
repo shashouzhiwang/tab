@@ -1,0 +1,77 @@
+.tab-home-artboard-page{
+	.artBoardContent{
+		height:auto;
+		position:absolute;
+		top:53px;
+		bottom:0;
+		div{
+			margin-left:0 !important;
+		}
+	}
+
+	.leftContent{
+		ion-list{
+			margin-top:1rem;
+			border:none;
+			padding:0;
+			ion-item:first-child{
+				border-top:none;
+			}
+			ion-item{
+				padding:0;
+				border:none;
+				border-bottom:none !important;
+				font-size:1rem;	
+				text-align:center;
+				min-height:2rem;
+				color:#ACACAC;
+				div.item-inner{
+					border:none;
+				}
+			}
+		}
+	}
+
+	.listContent{
+		ion-list{
+			margin-top:1rem;
+			border:none;
+			ion-item:first-child{
+				border-top:none;
+			}
+		}
+		ion-item{
+			border-bottom:none !important;
+		}
+		h3{
+			font-size:1.2rem;
+		}
+		p{
+			font-size:1rem;
+		}
+		ion-item:last-child .item-inner{
+		    border-bottom: 0.55px solid #c8c7cc !important; 
+		}
+	}
+
+	.rightContent{
+		background-color:#F2F3F4;
+		height:auto;
+		position:absolute;
+		top:53px;
+		bottom:0;
+
+		div{
+			margin-left:0 !important;
+		}
+
+		.noVip{
+		    justify-content: center;
+		    align-items: center;
+		    transform: translateY(-5rem);
+		    color: #9B9B9B;
+		    font-size: 1.2rem;
+		}
+	}
+
+}

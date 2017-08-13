@@ -1,0 +1,60 @@
+
+<ion-content id="home">
+
+<div class="dk-booking h100">
+
+  <div class="dk-sidebar h100">
+    <ion-list radio-group class="p_5 homePageList">
+       
+      <ion-item (click)="goBookingRecording()" class="p_0 tabHomeSearchInput">
+        <ion-label><ion-icon name="ios-search"></ion-icon></ion-label>
+        <ion-input type="search" placeholder="预约记录" readonly></ion-input>
+      </ion-item>
+
+      <ion-item class="p_0">
+        <ion-label>按床位</ion-label>
+        <ion-radio checked="true" value="go"></ion-radio>
+      </ion-item>
+
+      <ion-item class="p_0">
+        <ion-label>按技师</ion-label>
+        <ion-radio value="rust"></ion-radio>
+      </ion-item>
+
+      <ion-item class="p_0">
+        <ion-label>按护士</ion-label>
+        <ion-radio value="python"></ion-radio>
+      </ion-item>
+    </ion-list>
+
+    <span (click)="collapse($event);">
+        icon
+    </span>
+  </div>
+  <div class="dk-bookingContent h100">
+    <div class="calendar ub" >
+      <div class="calendar-col-time ub ub-ver">
+        <div class="calendar-unit-time ub ub-ver" *ngFor="let item of timePeriod">
+          <div class="ub ub-pe ub-ae">{{item.name}}</div>
+        </div>
+      </div>
+      <div class="calendar-col first-col ub ub-ver" *ngFor="let bedList of bed">
+        <div class="calendar-title ub ub-ac ub-ver">
+          <div class="ub">{{bedList.name}}</div>
+          <div class="ub">{{bedList.number}}</div>
+        </div>
+        <div class="calendar-col-content">
+          <div class="calendar-unit" *ngFor="let item of timePeriod" (click)="openModel({charNum: 0});">
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+  
+</ion-content>
+

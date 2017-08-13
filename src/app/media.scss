@@ -1,0 +1,59 @@
+/* 判断ipad */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px){
+	html{
+		font-size: 24px;
+	}
+}
+/* ipad横屏 */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape){
+	html{
+		font-size: 16px;
+	}
+}
+
+/* ipad竖屏 */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait){
+	html{
+		font-size: 24px;
+	}
+}
+
+/* 判断iphone5 *//* 横屏竖屏判断方法与ipad一样 */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px){
+	html{
+		font-size: 16px;
+	}
+}
+
+/* 判断iphone4-iphone4s *//* 横屏竖屏判断方法与ipad一样 */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px){
+	html{
+		font-size: 14px;
+	}
+}
+
+/* iphone5分辨率 */
+// screen Width = 320px (css像素)
+// screen Height = 568px (css像素)
+// screen Width = 640px (实际像素)
+// screen Height = 1136px (实际像素)
+// Device-pixel-ratio:2
+
+/* iphone4-iphone4s分辨率 */
+// screen Width = 320px (css像素)
+// screen Height = 480px (css像素)
+// screen Width = 640px (实际像素)
+// screen Height = 960px (实际像素)
+// Device-pixel-ratio:2

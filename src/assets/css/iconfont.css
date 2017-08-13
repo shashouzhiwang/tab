@@ -1,0 +1,19 @@
+
+@font-face {font-family: "fc";
+  src: url('iconfont.eot?t=1501666535547'); /* IE9*/
+  src: url('iconfont.eot?t=1501666535547#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1501666535547') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1501666535547') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1501666535547#fc') format('svg'); /* iOS 4.1- */
+}
+
+.fc {
+  font-family:"fc" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fc-loading:before { content: "\e6f8"; }
+

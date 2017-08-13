@@ -1,0 +1,28 @@
+@charset 'utf-8';
+/*height-------------width*/
+.h100{height: 100%;}
+.w100{width: 100%}
+
+/*********padding***********/
+.p_0{padding:0px;}
+.p_5{padding:0.5rem;}
+
+/**************backgroundcolor*****************/
+.bc_w{
+	background-color:#fff !important;
+}
+
+/**************border**********************/
+.b_n{
+	border:none !important;
+}
+.bd_bt{
+	border-bottom:1px solid #ccc;
+} 
+.bd_rt{
+	border-right:1px solid #ccc;
+} 
+/*******************fontSize***********************/
+.f1{
+	font-size:1rem !important;
+}
