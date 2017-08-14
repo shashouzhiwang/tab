@@ -26,33 +26,9 @@
         <ion-radio value="python"></ion-radio>
       </ion-item>
     </ion-list>
- 
-  </div>
-  <div class="dk-bookingContent h100">
-    <div class="control-btn ub ub-pc" (click)="collapse($event);">
-      <i class="fc fc-left ub ub-ac"></i>
-    </div>
-    <div class="calendar ub" >
-      <div class="calendar-col-time ub ub-ver">
-        <div class="calendar-unit-time ub ub-ver" *ngFor="let item of timePeriod">
-          <div class="ub ub-pe ub-ae">{{item.name}}</div>
-        </div>
-      </div>
-      <div class="calendar-col first-col ub ub-ver" *ngFor="let bedList of bed">
-        <div class="calendar-title ub ub-ac ub-ver">
-          <div class="ub">{{bedList.name}}</div>
-          <div class="ub">{{bedList.number}}</div>
-        </div>
-        <div class="calendar-col-content">
-          <div class="calendar-unit" *ngFor="let item of timePeriod" (click)="openModel({charNum: 0});">
-            <div>eeee</div>
-            <div></div>
-          </div>
-        </div>
-      </div>
 
-    </div>
   </div>
+  <booking-time-sheet></booking-time-sheet>
 
 </div>
 

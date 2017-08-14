@@ -1,5 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 // import {DndModule} from 'ng2-dnd';
@@ -17,8 +18,19 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { BookingPage } from '../pages/booking/booking.component';
 import { BookingRecording } from '../pages/booking/booking-recording/booking-recording.component';
 import { AddBooking } from "../pages/booking/pop-add-booking/add-booking.component"
+import { BookingTimeSheetComponent } from "../pages/booking/booking-time-sheet/booking-time-sheet.component"
 
 //test
+import 'hammerjs';
+import {
+  MdIconModule,
+  MdButtonModule,
+  MdSelectModule,
+  MdSliderModule,
+  MdInputModule,
+  MdTooltipModule,
+  MdCheckboxModule, MdSidenavModule
+} from '@angular/material';
 import { TestGridster } from '../pages/booking/test/test.component';
 
 @NgModule({
@@ -29,6 +41,7 @@ import { TestGridster } from '../pages/booking/test/test.component';
 
     BookingPage,
     BookingRecording,
+    BookingTimeSheetComponent,
     AddBooking,
 
     TestGridster,
@@ -37,7 +50,9 @@ import { TestGridster } from '../pages/booking/test/test.component';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    GridsterModule
+    GridsterModule,
+    BrowserAnimationsModule,
+    MdIconModule, MdButtonModule, MdSelectModule, MdInputModule, MdTooltipModule, MdCheckboxModule, MdSidenavModule,
     // DndModule.forRoot()
   ],
   bootstrap: [IonicApp],
@@ -49,6 +64,7 @@ import { TestGridster } from '../pages/booking/test/test.component';
     BookingPage,
     BookingRecording,
     AddBooking,
+    BookingTimeSheetComponent,
 
     TestGridster,
     TabsPage
