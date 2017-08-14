@@ -4,7 +4,7 @@ import {NavController, NavParams, MenuController, App, Platform, ViewController,
 import { BookingRecording } from './booking-recording/booking-recording.component';
 import { AddBooking } from "./pop-add-booking/add-booking.component"
 
-import { SimpleDndComponent } from './test/test.component';
+import { TestGridster } from './test/test.component';
 
 import * as $ from 'jquery';
 
@@ -25,7 +25,7 @@ export class BookingPage {
 
 	goBookingRecording(){
 		// this.navCtrl.push(BookingRecording);
-		this.navCtrl.push(SimpleDndComponent);
+		this.navCtrl.push(TestGridster);
 	}
 
 	timePeriod:Array<Object> = [];
@@ -96,19 +96,19 @@ export class BookingPage {
 	//折叠
   collapse(e) {
     let bookingContent =  $(e.target).parents('.dk-bookingContent');
-    if(bookingContent.hasClass("collapse")){
+    if(bookingContent.hasClass("dk-collapse")){
       bookingContent.animate({
         marginLeft:'10rem'
       },300,function(){
         bookingContent.siblings().show();
-        bookingContent.removeClass("collapse");
+        bookingContent.removeClass("dk-collapse");
       })
-    }else{
+    }else{ 
       bookingContent.animate({
         marginLeft:0
       },300,function(){
         bookingContent.siblings().hide();
-        bookingContent.addClass("collapse");
+        bookingContent.addClass("dk-collapse");
       })
     }
   }

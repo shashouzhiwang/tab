@@ -1,10 +1,10 @@
 
 @font-face {font-family: "fc";
-  src: url('iconfont.eot?t=1501666535547'); /* IE9*/
-  src: url('iconfont.eot?t=1501666535547#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1501666535547') format('woff'), /* chrome, firefox */
-  url('iconfont.ttf?t=1501666535547') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('iconfont.svg?t=1501666535547#fc') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1502676023253'); /* IE9*/
+  src: url('iconfont.eot?t=1502676023253#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1502676023253') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1502676023253') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1502676023253#fc') format('svg'); /* iOS 4.1- */
 }
 
 .fc {
@@ -16,4 +16,20 @@
 }
 
 .fc-loading:before { content: "\e6f8"; }
+
+.fc-correct:before { content: "\e617"; }
+
+.fc-left:before { content: "\e618"; }
+
+.fc-member:before { content: "\e619"; }
+
+.fc-right:before { content: "\e61a"; }
+
+.fc-return:before { content: "\e61b"; }
+
+.fc-search:before { content: "\e61c"; }
+
+.fc-payment:before { content: "\e61d"; }
+
+.fc-reservation:before { content: "\e61e"; }
 

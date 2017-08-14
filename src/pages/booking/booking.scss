@@ -46,14 +46,19 @@
   .dk-bookingContent{
     background: white;
     .control-btn{
-      width: 3rem;
-      height: 6rem;
+      width: 1.6rem;
+      height: 4.4rem;
       background: #eee;
       position: absolute;
       z-index: 5;
       left: 0rem;
       top:50%;
       margin-top: -4rem;
+      border-radius: 0 .5rem .5rem 0;
+      background: #CBCBCB;
+      i{
+        color:white;
+      }
     }
     position: absolute;
     width: calc(100% - 10rem);

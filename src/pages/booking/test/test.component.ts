@@ -1,73 +1,45 @@
-// import {Component} from '@angular/core';
-//
-// @Component({
-//   selector: 'simple-dnd',
-//   template: `
-//     <ion-content id="home">
-// <h4>Simple Drag-and-Drop</h4>
-// <div class="row">
-//     <div class="col-sm-3">
-//         <div class="panel panel-success">
-//             <div class="panel-heading">Available to drag</div>
-//             <div class="panel-body">
-//                 <div class="panel panel-default" dnd-draggable [dragEnabled]="true">
-//                     <div class="panel-body">
-//                         <div>Drag Me</div>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     </div>
-//     <div class="col-sm-3">
-//         <div dnd-droppable class="panel panel-info" (onDropSuccess)="simpleDrop=$event">
-//             <div class="panel-heading">Place to drop</div>
-//             <div class="panel-body">
-//                 <div *ngIf="simpleDrop">Item was dropped here</div>
-//             </div>
-//         </div>
-//     </div>
-// </div>
-//       </ion-content>`
-// })
-// export class SimpleDndComponent {
-//   simpleDrop: any = null;
-// }
-
-
+import {GridsterConfig, GridsterItem}  from 'angular-gridster2';
+   
 import {Component} from '@angular/core';
 
 @Component({
-  selector: 'simple-dnd',
-  template: `
-    <ion-content id="home">
-<h4>Simple Drag-and-Drop with handle</h4>
-<div class="row">
-    <div class="col-sm-3">
-        <div class="panel panel-success">
-            <div class="panel-heading">Available to drag</div>
-            <div class="panel-body">
-                <div class="panel panel-default" dnd-draggable [dragEnabled]="true">
-                    <div class="panel-body">
-                        <div>
-                            <span dnd-draggable-handle>=</span>&nbsp;
-                            Drag Handle
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-3">
-        <div dnd-droppable class="panel panel-info" (onDropSuccess)="simpleDrop=$event">
-            <div class="panel-heading">Place to drop</div>
-            <div class="panel-body">
-                <div *ngIf="simpleDrop">Item was dropped here</div>
-            </div>
-        </div>
-    </div>
-</div>
-    </ion-content>`
+  selector: 'test-gridster',
+  templateUrl:"test.html"
 })
-export class SimpleDndComponent {
-  simpleDrop: any = null;
+export class TestGridster {
+  // simpleDrop: any = null;
+   options: GridsterConfig;
+   dashboard: Array<GridsterItem>;
+
+   static itemChange(item, itemComponent) {
+     console.info('itemChanged', item, itemComponent);
+   }
+ 
+   static itemResize(item, itemComponent) {
+     console.info('itemResized', item, itemComponent);
+   }
+ 
+   ngOnInit() {
+     this.options = {
+       itemChangeCallback: TestGridster.itemChange,
+       itemResizeCallback: TestGridster.itemResize,
+     };
+ 
+     this.dashboard = [
+       {cols: 2, rows: 1, y: 0, x: 0},
+       {cols: 2, rows: 2, y: 0, x: 2}
+     ];
+   }
+ 
+   changedOptions() {
+     this.options.api.optionsChanged();
+   }
+ 
+   removeItem(item) {
+     this.dashboard.splice(this.dashboard.indexOf(item), 1);
+   }
+ 
+   addItem() {
+     this.dashboard.push({});
+   }
 }

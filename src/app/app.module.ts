@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 // import {DndModule} from 'ng2-dnd';
+import {GridsterModule} from 'angular-gridster2';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -18,7 +19,7 @@ import { BookingRecording } from '../pages/booking/booking-recording/booking-rec
 import { AddBooking } from "../pages/booking/pop-add-booking/add-booking.component"
 
 //test
-// import { SimpleDndComponent } from '../pages/booking/test/test.component';
+import { TestGridster } from '../pages/booking/test/test.component';
 
 @NgModule({
   declarations: [
@@ -30,12 +31,13 @@ import { AddBooking } from "../pages/booking/pop-add-booking/add-booking.compone
     BookingRecording,
     AddBooking,
 
-    // SimpleDndComponent,
+    TestGridster,
     TabsPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    GridsterModule
     // DndModule.forRoot()
   ],
   bootstrap: [IonicApp],
@@ -48,7 +50,7 @@ import { AddBooking } from "../pages/booking/pop-add-booking/add-booking.compone
     BookingRecording,
     AddBooking,
 
-    // SimpleDndComponent,
+    TestGridster,
     TabsPage
   ],
   providers: [
