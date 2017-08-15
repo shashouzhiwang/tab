@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {NavController, NavParams, MenuController, App, Platform, ViewController,PopoverController, ModalController} from 'ionic-angular';
+import { DatePickerOptions, DateModel } from 'ng2-datepicker';
 
 import { BookingRecording } from './booking-recording/booking-recording.component';
 import { AddBooking } from "./pop-add-booking/add-booking.component"
@@ -14,6 +15,8 @@ import * as $ from 'jquery';
   templateUrl: 'booking.html'
 })
 export class BookingPage {
+   date: DateModel;
+   options: DatePickerOptions;
 
   constructor(
 		public navCtrl:NavController,
@@ -21,98 +24,13 @@ export class BookingPage {
 		public modalCtrl: ModalController,
 		public popoverCtrl: PopoverController
   	) {
-	// this.generatorTime();
+  	this.options = new DatePickerOptions();
   }
 
 	goBookingRecording(){
-		// this.navCtrl.push(BookingRecording);
-		this.navCtrl.push(TestGridster);
+		this.navCtrl.push(BookingRecording);
+		// this.navCtrl.push(TestGridster);
 	}
-
-	// timePeriod:Array<Object> = [];
-	// bed:Array<Object>= [{
-	// 	name:"雅苑",
-	// 	number:"床位1号(1)"
-	// },
-	// {
-	// 	name:"雅苑",
-	// 	number:"床位1号(1)"
-	// },
-	// {
-	// 	name:"雅苑",
-	// 	number:"床位1号(1)"
-	// },
-	// {
-	// 	name:"雅苑",
-	// 	number:"床位1号(1)"
-	// },
-	// {
-	// 	name:"雅苑",
-	// 	number:"床位1号(1)"
-	// },
-	// {
-	// 	name:"雅苑",
-	// 	number:"床位1号(1)"
-	// },
-	// {
-	// 	name:"雅苑",
-	// 	number:"床位1号(1)"
-	// },
-	// {
-	// 	name:"雅苑",
-	// 	number:"床位1号(1)"
-	// },
-	// {
-	// 	name:"雅苑",
-	// 	number:"床位1号(1)"
-	// },];
-
-	// generatorTime(){
-    //
-	// 	for(var i:any=0; i<=24; i ++){
-	// 		var tem:any = '';
-	// 		if(i<10){
-	// 			tem = '0'+i+':00';
-	// 		}else{
-	// 			tem = i+':00';
-	// 		}
-	// 		this.timePeriod.push({
-	// 			name:tem
-	// 		})
-	// 	}
-	// }
-
-  // openModel(myEvent){
-  //   let popover = this.popoverCtrl.create(AddBooking,{
-  //
-  //   },{
-  //     "cssClass":"pop-add-adding"
-  //   });
-  //   // popover.present()
-  //   popover.present({
-  //     ev: myEvent
-  //   });
-  // }
-
-	//折叠
-  // collapse(e) {
-  //   let bookingContent =  $(e.target).parents('.dk-bookingContent');
-  //   if(bookingContent.hasClass("dk-collapse")){
-  //     bookingContent.animate({
-  //       marginLeft:'10rem'
-  //     },300,function(){
-  //       bookingContent.siblings().show();
-  //       bookingContent.removeClass("dk-collapse");
-  //     })
-  //   }else{
-  //     bookingContent.animate({
-  //       marginLeft:0
-  //     },300,function(){
-  //       bookingContent.siblings().hide();
-  //       bookingContent.addClass("dk-collapse");
-  //     })
-  //   }
-  // }
 
 
 }

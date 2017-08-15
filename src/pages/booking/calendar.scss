@@ -1,9 +1,14 @@
 $calendar-unit-height:4rem;
 $calendar-unit-width:8rem;
 .calendar{
+	width:100%;
+	height:100%;
 	.calendar-col-time{
 		width: $calendar-unit-width/2;
+		margin-top: -$calendar-unit-height;
+    	margin-left: -$calendar-unit-width/2;;
 		.calendar-unit-time{
+			width: $calendar-unit-width/2;
 			height: $calendar-unit-height;
 			right: .5rem;
 			>div{
@@ -22,6 +27,7 @@ $calendar-unit-width:8rem;
   }
 	.calendar-col{
 		width: $calendar-unit-width;
+		margin-top:-$calendar-unit-height;
 		.calendar-title{
 			padding:1rem 0;
 			font-size: 1rem;

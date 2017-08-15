@@ -1,0 +1,21 @@
+#gridster{
+	position: absolute;
+    overflow: visible;
+    top: 4rem;
+    // width: calc(100% - 4rem);
+    left: 4rem;
+    // height: calc(100% - 4rem);
+    z-index: 11; 
+    .gridster-grid{
+    	opacity: 0;
+    }
+    .gridster-cell-warp{
+    	height: 100%; 
+    	.gridster-cell{
+    		padding:.2rem;
+    	}
+    }
+    .gridster-item{
+        left: 4rem;
+    }
+}

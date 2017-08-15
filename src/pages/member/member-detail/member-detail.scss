@@ -1,0 +1,97 @@
+page-member-detail {
+  .scroll-content, .fixed-content{
+    margin-left: 1.2rem !important;
+  }
+  .toolbar-background-md{
+    background:white;
+    border-bottom: 1px solid #dedede;
+  }
+  .label{
+    color: black;
+    text-align: left;
+    font-weight: normal;
+    font-size: 0.9rem;
+  }
+  .header-md::after{
+    background: none;
+  }
+  .toolbar-title-md{
+    font-size: 1.2rem;
+  }
+  .item-md p{
+    font-weight: normal;
+    font-size: 1rem;
+  }
+  h2{
+    color: #4A4A4A;
+  }
+  .member-info{
+    padding-top: 1.5rem;
+    .item-ios p{
+      font-size: 1rem;
+      color: black;
+    }
+  }
+  .member-detail{
+    .row{
+      margin-bottom: 0.3rem;
+    }
+  }
+  .cost-data{
+    margin-top: 1.5rem;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 0.9rem;
+    color: #9B9B9B;
+    border-top: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+    .col{
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    p{
+      margin-bottom: 0px;
+    }
+  }
+  .cost-data-div{
+    padding-right: 16px;
+  }
+  .bor-r-de{
+      border-right: 1px solid #dedede;
+  }
+  .item-md ion-avatar img{
+    width: 4rem;
+    height: 4rem;
+  }
+  .dp-ib{
+    display: inline-block;
+  }
+  .list-ios > .item-block:first-child{
+    border-top: none;
+  }
+  .list-ios > .item-block:last-child{
+    border-bottom: none;
+  }
+  .card-list{
+    padding-right: 16px;
+    margin-top: 4rem;
+    .item-block{
+      min-height: 3.4rem;
+    }
+    .label{
+      font-weight: 600;
+    }
+    ion-icon{
+      font-weight:bold;
+      min-height: 2.3rem;
+      font-size: 2.3rem;
+      color: #2FB8E9;
+    }
+    .label{
+      font-size: 1rem;
+    }
+    .item-ios{
+      padding-left: 0;
+    }
+  }
+}

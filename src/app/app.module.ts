@@ -2,12 +2,14 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { DatePickerModule } from 'ng2-datepicker';
 import { MyApp } from './app.component';
 // import {DndModule} from 'ng2-dnd';
 import {GridsterModule} from 'angular-gridster2';
 
 import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
+import { MemberPage } from '../pages/member/member';
+import { MemberDetailPage } from '../pages/member/member-detail/member-detail';
 
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -37,7 +39,9 @@ import { TestGridster } from '../pages/booking/test/test.component';
   declarations: [
     MyApp,
     AboutPage,
-    ContactPage,
+    MemberPage,
+    MemberDetailPage,
+    
 
     BookingPage,
     BookingRecording,
@@ -49,6 +53,7 @@ import { TestGridster } from '../pages/booking/test/test.component';
   ],
   imports: [
     BrowserModule,
+    DatePickerModule,
     IonicModule.forRoot(MyApp),
     GridsterModule,
     BrowserAnimationsModule,
@@ -59,7 +64,8 @@ import { TestGridster } from '../pages/booking/test/test.component';
   entryComponents: [
     MyApp,
     AboutPage,
-    ContactPage,
+    MemberPage,
+    MemberDetailPage,
 
     BookingPage,
     BookingRecording,
@@ -72,6 +78,7 @@ import { TestGridster } from '../pages/booking/test/test.component';
   providers: [
     StatusBar,
     SplashScreen,
+    DatePickerModule,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

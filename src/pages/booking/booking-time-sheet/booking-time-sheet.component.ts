@@ -16,11 +16,40 @@ export class BookingTimeSheetComponent {
   options: GridsterConfig;
   dashboard: Array<GridsterItem>;
 
+  static colorTimeSheet:Array<Object> = [
+      {
+      "color": "#65A992",
+      "bgColor":"#E2F5EF",
+      },
+      {
+      "color": "#A185B6",
+      "bgColor":"#E9EFFF",
+      },
+      {
+      "color": "#65A992",
+      "bgColor":"#E2F5EF",
+      },
+      {
+      "color": "#A185B6",
+      "bgColor":"#E9EFFF",
+      },
+      {
+      "color": "#65A992",
+      "bgColor":"#E2F5EF",
+      },
+      {
+      "color": "#A185B6",
+      "bgColor":"#E9EFFF",
+      }
+  ];  
+
   static eventStop(item, itemComponent, event) {
     console.info('eventStop', item, itemComponent, event);
   }
 
   static itemChange(item, itemComponent) {
+    item.bgcolor = BookingTimeSheetComponent.colorTimeSheet[item.x]["bgColor"];
+    item.color = BookingTimeSheetComponent.colorTimeSheet[item.x]["color"];
     console.info('itemChanged', item, itemComponent);
   }
 
@@ -44,7 +73,7 @@ export class BookingTimeSheetComponent {
     public popoverCtrl: PopoverController
   ) {
     this.generatorTime();
-  }
+  } 
 
   ngOnInit() {
     this.options = {
@@ -116,7 +145,8 @@ export class BookingTimeSheetComponent {
     };
 
     this.dashboard = [
-      {cols: 1, rows: 1, y: 0, x: 0,resizeEnabled: true,bgcolor:'blue'}
+      {cols: 1, rows: 1, y: 0, x: 0,resizeEnabled: true,bgcolor:BookingTimeSheetComponent.colorTimeSheet[0]["bgColor"],color:BookingTimeSheetComponent.colorTimeSheet[0]['color']},
+      {cols: 1, rows: 1, y: 2, x: 2,resizeEnabled: true,bgcolor:BookingTimeSheetComponent.colorTimeSheet[0]["bgColor"],color:BookingTimeSheetComponent.colorTimeSheet[0]['color']}
     ];
   }
 
@@ -138,13 +168,10 @@ export class BookingTimeSheetComponent {
   }
 
   timePeriod:Array<Object> = [];
-  bed:Array<Object>= [{
+  bed:Array<Object>= [
+    {
     name:"雅苑",
     number:"床位1号(1)"
-  },
-    {
-      name:"雅苑",
-      number:"床位1号(1)"
     },
     {
       name:"雅苑",
@@ -165,15 +192,8 @@ export class BookingTimeSheetComponent {
     {
       name:"雅苑",
       number:"床位1号(1)"
-    },
-    {
-      name:"雅苑",
-      number:"床位1号(1)"
-    },
-    {
-      name:"雅苑",
-      number:"床位1号(1)"
-    },];
+    }
+    ];
 
   generatorTime(){
     for(var i:any=0; i<=10; i ++){
