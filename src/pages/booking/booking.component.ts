@@ -3,7 +3,6 @@ import {NavController, NavParams, MenuController, App, Platform, ViewController,
 import { DatePickerOptions, DateModel } from 'ng2-datepicker';
 
 import { BookingRecording } from './booking-recording/booking-recording.component';
-import { AddBooking } from "./pop-add-booking/add-booking.component"
 import { BookingTimeSheetComponent } from "./booking-time-sheet/booking-time-sheet.component"
 
 import { TestGridster } from './test/test.component';

@@ -19,7 +19,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 //预约模块
 import { BookingPage } from '../pages/booking/booking.component';
 import { BookingRecording } from '../pages/booking/booking-recording/booking-recording.component';
-import { AddBooking } from "../pages/booking/pop-add-booking/add-booking.component"
+import { PopParent } from "../pages/booking/pop-add-booking/pop-parent.component"
+import { AddBooking } from "../pages/booking/pop-add-booking/add/add-booking.component"
 import { BookingTimeSheetComponent } from "../pages/booking/booking-time-sheet/booking-time-sheet.component"
 
 //test
@@ -41,11 +42,12 @@ import { TestGridster } from '../pages/booking/test/test.component';
     AboutPage,
     MemberPage,
     MemberDetailPage,
-    
+
 
     BookingPage,
     BookingRecording,
     BookingTimeSheetComponent,
+    PopParent,
     AddBooking,
 
     TestGridster,
@@ -69,6 +71,7 @@ import { TestGridster } from '../pages/booking/test/test.component';
 
     BookingPage,
     BookingRecording,
+    PopParent,
     AddBooking,
     BookingTimeSheetComponent,
 

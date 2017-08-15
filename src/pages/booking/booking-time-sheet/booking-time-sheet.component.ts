@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import {NavController, NavParams, MenuController, App, Platform, ViewController,PopoverController, ModalController} from 'ionic-angular';
 import {GridsterConfig, GridsterItem}  from 'angular-gridster2';
 import { BookingRecording } from '../booking-recording/booking-recording.component';
-import { AddBooking } from "../pop-add-booking/add-booking.component"
+import { AddBooking } from "../pop-add-booking/add/add-booking.component"
+import { PopParent } from "../pop-add-booking/pop-parent.component"
 
 import { TestGridster } from '../test/test.component';
 
@@ -41,7 +42,7 @@ export class BookingTimeSheetComponent {
       "color": "#A185B6",
       "bgColor":"#E9EFFF",
       }
-  ];  
+  ];
 
   static eventStop(item, itemComponent, event) {
     console.info('eventStop', item, itemComponent, event);
@@ -73,7 +74,7 @@ export class BookingTimeSheetComponent {
     public popoverCtrl: PopoverController
   ) {
     this.generatorTime();
-  } 
+  }
 
   ngOnInit() {
     this.options = {
@@ -210,8 +211,7 @@ export class BookingTimeSheetComponent {
   }
 
   openModel(myEvent){
-    let popover = this.popoverCtrl.create(AddBooking,{
-
+    let popover = this.popoverCtrl.create(PopParent,{
     },{
       "cssClass":"pop-add-adding"
     });

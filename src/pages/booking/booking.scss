@@ -9,24 +9,6 @@
   font-size: 1rem;
 }
 
-#bk-addBooking{
-  .scroll-content{
-    margin-left: 0 !important;
-    width: 100%;
-    .bk-list-header{
-      height: 3rem;
-      >div:first-child,>div:last-child{
-        color:#01a1ff;
-      }
-    }
-    .bk-list-content{
-      //height: 6rem;
-      .bk-list{
-        height: 3rem;
-      }
-    }
-  }
-}
 
 //折叠
 .dk-booking{
@@ -48,10 +30,9 @@
     .control-btn{
       width: 1.6rem;
       height: 4.4rem;
-      background: #eee;
       position: absolute;
-      z-index: 5;
-      left: 0rem;
+      z-index: 111;
+      left: 0;
       top:50%;
       margin-top: -4rem;
       border-radius: 0 .5rem .5rem 0;
@@ -61,7 +42,7 @@
       }
     }
     position: absolute;
-    width: calc(100% - 10rem);
+    width: calc(100% - 0rem);
     margin-left:10rem;
     height: 100%;
     overflow: scroll;
