@@ -6,7 +6,7 @@
   url('iconfont.ttf?t=1502676023253') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
   url('iconfont.svg?t=1502676023253#fc') format('svg'); /* iOS 4.1- */
 }
-
+  
 .fc {
   font-family:"fc" !important;
   font-size:16px;

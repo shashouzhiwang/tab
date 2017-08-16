@@ -1,5 +1,5 @@
 // http://ionicframework.com/docs/theming/
-
+@import '../assets/css/iconfont.scss';
 ::-webkit-scrollbar {
   display: none !important;
 }
@@ -10,13 +10,6 @@ html{
 body{
 	font-size:1rem;
 }
-
-.scroll-content,.fixed-content{
-	margin-left:3rem !important;
-	width:calc(100% - 3rem);
-	margin-bottom:0 !important;
-}
-
 
 .dnd-drag-start {
   -moz-transform:scale(0.8);
@@ -43,9 +36,42 @@ body{
   border: 1px dashed #000;
 }
 
-
-
-
+ion-tabs .tabbar[role='tablist']{
+  border-right:1px solid #C7C8CC;
+  width: 3.7rem !important;
+}
+.tabs-ios .tab-button[aria-selected=true] .tab-button-icon{
+  color: white;
+}
+.scroll-content, .fixed-content{
+  margin-left: 3.7rem;
+  width: calc(100% - 3.7rem);
+  margin-bottom:0 !important;
+}
+.tabs-ios .tabbar{
+  background-color: #F2F3F4;
+}
+.tab-button{
+    display: inline-block;
+    width: 100%;
+    height: 60px;
+}
+.item-ios p{
+  font-size: 0.85rem;
+}
+.item-ios h2{
+  font-size: 1.4rem;
+}
+.card-content-ios{
+  font-size: 0.85rem;
+}
+.back-button-icon-ios{
+  font-size: 1.5rem;
+  color:#2FB8E9;
+}
+.back-button-ios{
+  min-height: 2.2rem;
+}
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These

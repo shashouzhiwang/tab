@@ -15,29 +15,42 @@
           background: #F5F5F5;
           padding: 0 0.8rem;
           height: 3rem;
+          font-size:1.2rem;
           >div:first-child,>div:last-child{
             color:#01a1ff;
           }
         }
         .bk-list-content{
+          font-size: 1rem;
           .bk-list{
             height: 3rem;
             padding: 0 0.8rem;
             background: white;
-            margin-top: 1.2rem;
+            margin-top: 1rem;
+            &.startTime{
+              border-bottom:1px solid #eee;
+            }
             textarea{
               height: 5rem;
               resize:none;
               border: none;
               width: 100%;
-              font-size: .8rem;
+              font-size: 1rem;
             }
           }
         }
       }
-
-
     }
+    ion-item{
+      min-height: 3rem;
+      ion-label{
+        text-align: left;
+        padding: 0;
+        color: #000;
+        font-size: 1rem;
+        margin: 0;
+      }
+    }    
   }
 }
 

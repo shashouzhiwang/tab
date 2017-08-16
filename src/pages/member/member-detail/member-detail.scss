@@ -1,16 +1,12 @@
 page-member-detail {
-  .scroll-content, .fixed-content{
-    margin-left: 1.2rem !important;
-  }
   .toolbar-background-md{
     background:white;
-    border-bottom: 1px solid #dedede;
+    border-bottom: 1px solid #C8C7CC;
   }
   .label{
-    color: black;
     text-align: left;
     font-weight: normal;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
   .header-md::after{
     background: none;
@@ -22,17 +18,23 @@ page-member-detail {
     font-weight: normal;
     font-size: 1rem;
   }
-  h2{
+  .item-ios h2{
     color: #4A4A4A;
+    font-size: 1.9rem;
+    font-weight: 600;
   }
   .member-info{
     padding-top: 1.5rem;
+    .item-ios{
+      padding-left: 30px;
+    }
     .item-ios p{
       font-size: 1rem;
       color: black;
     }
   }
   .member-detail{
+      padding-left: 30px;
     .row{
       margin-bottom: 0.3rem;
     }
@@ -42,22 +44,24 @@ page-member-detail {
     margin-left: 0;
     margin-right: 0;
     font-size: 0.9rem;
-    color: #9B9B9B;
-    border-top: 1px solid #dedede;
-    border-bottom: 1px solid #dedede;
+    color: #999999;
+    border-top: 1px solid #C8C7CC;
+    border-bottom: 1px solid #C8C7CC;
     .col{
       padding-top: 1rem;
       padding-bottom: 1rem;
     }
     p{
+      margin-top: 0px;
       margin-bottom: 0px;
     }
   }
   .cost-data-div{
+    padding-left: 16px;
     padding-right: 16px;
   }
   .bor-r-de{
-      border-right: 1px solid #dedede;
+      border-right: 1px solid #C8C7CC;
   }
   .item-md ion-avatar img{
     width: 4rem;
@@ -73,19 +77,17 @@ page-member-detail {
     border-bottom: none;
   }
   .card-list{
+    padding-left: 16px;
     padding-right: 16px;
     margin-top: 4rem;
     .item-block{
       min-height: 3.4rem;
     }
-    .label{
-      font-weight: 600;
-    }
     ion-icon{
       font-weight:bold;
       min-height: 2.3rem;
       font-size: 2.3rem;
-      color: #2FB8E9;
+      color: $color-g-blue;
     }
     .label{
       font-size: 1rem;

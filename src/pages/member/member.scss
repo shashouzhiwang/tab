@@ -5,47 +5,21 @@ page-member {
       padding: 0;
     }
   }
-  .toolbar-background-ios{
-    background:white;
-    border-bottom: 1px solid #dedede;
-  }
-  .toolbar-background-md{
-    background:white;
-    border-bottom: 1px solid #dedede;
-  }
-  .toolbar-ios ion-title{
-    padding-right: 0;
-  }
   .content-row{
     margin-left: 0;
     margin-right: 0;
   }
-  .toolbar-title-md{
-    font-size: 1.2rem;
-  }
-  .header-md::after{
-    background: none;
-  }
-.header-ios .toolbar-background-ios{
-  border-bottom: 1px solid #dedede;
-}
-  .bor-b-de{
-    border-bottom: 1px solid #dedede;
-  }
-  .dp-ib{
-    display: inline-block;
-  }
+
   .search-list{
-    padding-top: 0.5rem;
+    padding-top: 0.8rem;
     .label-md{
       margin-top: 0;
       margin-bottom: 0;
     }
     .label{
       text-align: left;
-      color:#9B9B9B;
+      color:#999999;
       font-weight: normal;
-      font-size: 0.6rem;
     }
     .item-block{
       min-height: 2.4rem;
@@ -62,7 +36,7 @@ page-member {
     border-top: none;
   }
   .list-ios .item-block .item-inner{
-    border-bottom: 0.55px solid #dedede;
+    border-bottom: 0.55px solid #C8C7CC;
   }
 
   .member-list{
@@ -79,24 +53,19 @@ page-member {
       padding-left: 0;
     }
     .label{
-      color:#9B9B9B;
+      color:#999999;
       font-weight: normal;
       font-size: 1rem;
       padding-left: 0;
     }
     .item-block:last-child{
-        border-bottom: 0.55px solid #dedede;
+        border-bottom: 0.55px solid #C8C7CC;
       }
     .time{
-      font-size: 0.65rem;
+      font-size: 0.85rem;
     }
-  }
-  .bor-r-de{
-    border-right: 1px solid #dedede;
   }
   .fs_0.8{
     font-size: 0.8rem !important;
   }
-  .color_blue{color:#2FB8E9;}
-  .color_gray{color:#9B9B9B;}
 }

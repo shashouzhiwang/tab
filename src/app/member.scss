@@ -1,0 +1,138 @@
+//全局颜色
+$color-g-blue: #2FB8E9;
+
+
+.item-ios{
+	font-size: 0.85rem;
+}
+
+/*--字体--*/
+.color_gray{color:#999999;}
+.color_blue{color:$color-g-blue;}
+.color_green{color:#95E8A9;}
+.color_black_less{color:#4A4A4A}
+
+.fw{font-weight: bold;}
+
+.fs-1 {
+	font-size: 1rem;
+}
+.fs-1.2 {
+	font-size: 1.2rem;
+}
+.fs-0.85{
+	font-size: 0.85rem;
+}
+.fs-1.05{
+	font-size: 1.05rem;
+}
+
+
+
+/*height-------------width*/
+.h100{height: 100%;}
+.w100{width: 100%}
+
+/*---display---*/
+.ib{
+	display: inline-block;
+}
+
+/*---边框---*/
+.bor-b{
+	border-bottom: 1px solid #C8C7CC;
+}
+.bor-r{
+	border-right: 1px solid #C8C7CC;
+}
+.bd_rt{
+	border-right:1px solid #C8C7CC;
+}
+
+/*---背景颜色---*/
+.bgc-gray{background-color:#F2F3F4;}
+
+
+
+//margin
+.mart-1 {
+	margin-top: 1rem;
+}
+
+//no
+.no-bgc{background-color: transparent !important;}
+
+
+.checkbox-ios .checkbox-checked {
+	border-color: $color-g-blue;
+	background: $color-g-blue;
+}
+
+.text-input{
+	font-size: 1.2rem;
+}
+
+//部分页面样式
+.left-content{
+	.scroll-content, .fixed-content{
+	  margin-left: 0;
+	  width:100%;
+	}
+}
+.right-content{
+	.scroll-content, .fixed-content{
+	  margin-left: 0;
+	  width:100%;
+	}
+}
+
+
+// 头部样式
+.toolbar-background-ios{
+	background:white;
+	border-bottom: 1px solid #C8C7CC;
+}
+.toolbar-background-md{
+	background:white;
+	border-bottom: 1px solid #C8C7CC;
+}
+.toolbar-title-md{
+	font-size: 1.2rem;
+}
+.header-md::after{
+	background: none;
+}
+.header-ios .toolbar-background-ios{
+	border-bottom: 1px solid #C8C7CC;
+}
+
+
+//ion-card样式
+.card-ios{
+	box-shadow: none;
+	border-radius: 4px;
+}
+
+//bar-button-ios
+.bar-button-ios[icon-only] ion-icon{
+  font-size:1em;
+  color: $color-g-blue;
+}
+
+//searchbar-ios
+.searchbar-ios{
+	min-height: 1.5rem;
+}
+.searchbar-ios .searchbar-input{
+	height: 1.5rem;
+	line-height: 1.5rem;
+	font-size: 0.85rem;
+}
+.searchbar-ios .searchbar-search-icon{
+	top:0.4rem;
+}
+.search-cansel{
+	background-color: white;
+	color: $color-g-blue;
+	font-size: 1rem;
+}

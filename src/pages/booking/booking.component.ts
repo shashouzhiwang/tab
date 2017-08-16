@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NavController, NavParams, MenuController, App, Platform, ViewController,PopoverController, ModalController} from 'ionic-angular';
+import { NavController, NavParams, MenuController, App, Platform, ViewController,PopoverController, ModalController} from 'ionic-angular';
 import { DatePickerOptions, DateModel } from 'ng2-datepicker';
 
 import { BookingRecording } from './booking-recording/booking-recording.component';
@@ -10,20 +10,22 @@ import { TestGridster } from './test/test.component';
 import * as $ from 'jquery';
 
 @Component({
-  selector: 'page-booking',
-  templateUrl: 'booking.html'
-})
-export class BookingPage {
-   date: DateModel;
-   options: DatePickerOptions;
-
+  selector: 'page-booking', 
+  templateUrl: 'booking.html'               
+})    
+export class BookingPage { 
+   date: DateModel;  
+   options: DatePickerOptions; 
+ 
   constructor(
 		public navCtrl:NavController,
 		public appCtrl:App,
 		public modalCtrl: ModalController,
 		public popoverCtrl: PopoverController
   	) {
-  	this.options = new DatePickerOptions();
+  	this.options = new DatePickerOptions({
+  		autoApply:true
+  	});
   }
 
 	goBookingRecording(){

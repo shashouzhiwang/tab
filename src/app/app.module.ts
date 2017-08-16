@@ -5,11 +5,15 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { DatePickerModule } from 'ng2-datepicker';
 import { MyApp } from './app.component';
 // import {DndModule} from 'ng2-dnd';
-import {GridsterModule} from 'angular-gridster2';
+import { GridsterModule } from 'angular-gridster2';
+// import { MyDatePickerModule } from 'angular2-datepicker/src/my-date-picker/my-date-picker.module';
 
 import { AboutPage } from '../pages/about/about';
 import { MemberPage } from '../pages/member/member';
 import { MemberDetailPage } from '../pages/member/member-detail/member-detail';
+import { MemberSdcPage } from '../pages/member/member-sdc/member-sdc';
+import { LoginPage } from '../pages/member/login/login';
+
 
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -44,7 +48,8 @@ import { TestGridster } from '../pages/booking/test/test.component';
     AboutPage,
     MemberPage,
     MemberDetailPage,
-
+    MemberSdcPage,
+    LoginPage,
 
     BookingPage,
     BookingRecording,
@@ -61,10 +66,20 @@ import { TestGridster } from '../pages/booking/test/test.component';
   imports: [
     BrowserModule,
     DatePickerModule,
-    IonicModule.forRoot(MyApp),
     GridsterModule,
     BrowserAnimationsModule,
     MdIconModule, MdButtonModule, MdSelectModule, MdInputModule, MdTooltipModule, MdCheckboxModule, MdSidenavModule,
+    IonicModule.forRoot(MyApp,{
+      backButtonIcon:'md-arrow-back',
+      backButtonText:'',
+      iconMode:'ios',
+      modalEnter:'modal-slide-in',
+      modalLeave:'modal-slide-out',
+      tabsPlacement:'bottom',
+      pageTransition:'ios-transition',
+      swipeBackEnabled:true
+    }),
+    // MyDatePickerModule,
     // DndModule.forRoot()
   ],
   bootstrap: [IonicApp],
@@ -73,6 +88,8 @@ import { TestGridster } from '../pages/booking/test/test.component';
     AboutPage,
     MemberPage,
     MemberDetailPage,
+    MemberSdcPage,
+    LoginPage,
 
     BookingPage,
     BookingRecording,
@@ -89,8 +106,9 @@ import { TestGridster } from '../pages/booking/test/test.component';
   providers: [
     StatusBar,
     SplashScreen,
-    DatePickerModule,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
-  ]
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
+  ],
 })
-export class AppModule {}
+export class AppModule {
+
+ }

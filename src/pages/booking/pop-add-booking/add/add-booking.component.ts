@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
 
 
 @Component({
@@ -6,5 +6,17 @@ import {Component} from '@angular/core';
   templateUrl: 'add-booking.html'
 })
 export class AddBooking {
+	@Input() testData: string;
+	@Output() openSelectMember: EventEmitter<boolean> = new EventEmitter();
+
+	constructor(){
+
+	}
+
+	selectMember(value){
+		this.openSelectMember.emit(value);
+	}
+
+	// sendInfo.emit();
   
 }

@@ -5,11 +5,11 @@
     <div class="ub"></div>
   </div>
   <div class="bk-list-content">
-    <div class="ub ub-ac bk-list">
+    <div class="ub ub-ac bk-list" (click)="selectMember($event);">
       <div class="ub">顾客</div>
-      <div class="ub ub-f1 ub-pe">18898532123</div>
+      <div class="ub ub-f1 ub-pe">{{testData}}</div>
     </div>
-    <div class="ub ub-ac bk-list">
+    <div class="ub ub-ac bk-list startTime">
       <div class="ub">开始时间</div>
       <div class="ub ub-f1 ub-pe"><ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" ></ion-datetime></div>
     </div>

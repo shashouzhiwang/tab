@@ -8,6 +8,7 @@ ion-tabs{
 		    width: 2.5rem;
 		    height: 100%;
 		    border-top: none;
+		    border-right:none;
 		    a{
 		    	font-size: .6rem;
     			color: black;
@@ -18,4 +19,13 @@ ion-tabs{
 		    	background: #2FB8E9;
 		    }
 	}
+
+
+}
+.fc-tabs{
+   .tab-button{
+      &>ion-icon{
+        font-family:"fc" !important;   /*指定在当前组件中的ion-icon使用的字体名称*/
+      }
+  }
 }

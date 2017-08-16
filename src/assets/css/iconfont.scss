@@ -1,0 +1,42 @@
+@import "ionicons-variables";
+
+$jpicons-font-path: $font-path !default;
+
+
+@font-face {font-family: "fc";
+  src: url('iconfont.eot?t=1502676023253'); /* IE9*/
+  src: url('iconfont.eot?t=1502676023253#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1502676023253') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1502676023253') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1502676023253#fc') format('svg'); /* iOS 4.1- */
+}
+  
+.fc {
+  font-family:"fc" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ion-ios-fc-loading:before { content: "\e6f8"; }
+
+.ion-ios-fc-correct:before { content: "\e617"; }
+
+.ion-ios-fc-left:before { content: "\e618"; }
+
+.ion-ios-fc-member-outline:before { content: "\e619"; }
+.ion-ios-fc-member:before { content: "\e619"; }
+
+.ion-ios-fc-right:before { content: "\e61a"; }
+
+.ion-ios-fc-return:before { content: "\e61b"; }
+
+.ion-ios-fc-search:before { content: "\e61c"; }
+
+.ion-ios-fc-payment-outline:before { content: "\e61d"; }
+.ion-ios-fc-payment:before { content: "\e61d"; }
+
+.ion-ios-fc-reservation-outline:before { content: "\e61e"; }
+.ion-ios-fc-reservation:before { content: "\e61e"; }
+

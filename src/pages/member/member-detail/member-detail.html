@@ -5,7 +5,7 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content>
+<ion-content class="right-content">
   <ion-list class="member-info" no-lines>
     <ion-item>
       <ion-avatar item-start>
@@ -15,7 +15,7 @@
       <p text-left>13265922486</p>
     </ion-item>
   </ion-list>
-  <ion-item no-lines class="member-detail">
+  <ion-item no-lines class="member-detail color_black_less">
     <ion-row>
       <ion-col>
         卡号：39389idhg
@@ -63,7 +63,7 @@
     </ion-row>
   </div>
   <ion-list class="card-list">
-    <ion-item>
+    <ion-item (click)="goSdc()">
       <ion-label>
         储值卡
       </ion-label>
@@ -71,15 +71,14 @@
     </ion-item>
     <ion-item>
       <ion-label>
-        储值卡
+        套餐次卡
       </ion-label>
       <ion-icon item-end ios="ios-add" md="md-add"></ion-icon>
     </ion-item>
     <ion-item>
       <ion-label>
-        储值卡
+        会员信息
       </ion-label>
-      <ion-icon item-end ios="ios-add" md="md-add"></ion-icon>
     </ion-item>
   </ion-list>
 </ion-content>

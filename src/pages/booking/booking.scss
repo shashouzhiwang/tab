@@ -15,12 +15,15 @@
   position: relative;
   height: 100% !important;
   .dk-sidebar{
+    border-right:0.55px solid #c8c7cc;
     width: 10rem;
     height: 100% !important;
     position: relative;
-    padding-top:3rem;
+    //padding-top:3rem;
+    padding-top:0;
     ion-item{
       //font-size:1rem;
+      padding:0 0.6rem;
       min-height:auto;
     }
 
@@ -54,9 +57,12 @@
     background: #F2F3F4;
     padding: 0 1rem !important;
     border-radius: 50px;
-    font-size:1rem;
-    margin-bottom: 3rem;
-
+    font-size: 1rem;
+    margin: 3rem 0.5rem;
+    width: 9rem;
+    .text-input{
+      font-size:1rem !important;
+    }
     input {
         color: #9B9B9B;
         margin: 0 !important;
@@ -65,6 +71,7 @@
 
     div{
       border-bottom:none !important;
+      padding-right:0 !important;
     }
     ion-icon{
       color:#9B9B9B;
@@ -446,25 +453,80 @@ page-tab-home-page {
 
 .homePageList{
   ion-item{
-    font-size:1.2rem;
+    font-size:1rem;
 
     .radio-checked .radio-inner{
-          position: absolute;
-          top: -2px;
-          left: 7px;
-          width: 14px;
-          height: 21px;
-          border-width: 4px;
-          border-top-width: 0;
-          border-left-width: 0;
-          border-style: solid;
-          border-color: #02C3F8;
-          -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+        position: absolute;
+        top: -1px;
+        left: 15px;
+        width: 10px;
+        height: 16px;
+        border-width: 4px;
+        border-top-width: 0;
+        border-left-width: 0;
+        border-style: solid;
+        border-color: #02C3F8;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
     }
   }
-
+  ion-item ion-label{
+    text-align:left;
+      color:#000 ;
+      font-size:1rem;
+  }
   ion-item.item-radio-checked ion-label{
-      color:#02C3F8;
+    text-align:left;
+      color:#000 ;
+  }
+  ion-item.item-block:last-child .item-inner{
+    border-bottom:0.55px solid #c8c7cc;
+  }
+  ion-item.item-block:last-child{
+    border-bottom:none;
+  }
+}
+
+.datepicker-calendar{
+  box-shadow:0 0 0 #fff !important;
+  position: static !important;
+  .datepicker-calendar-top{
+    background-color:#fff !important;
+    height:50px !important;
+    line-height:50px;
+    overflow:hidden;
+    span{
+      color:#000 !important;
+      margin-top:0 !important;
+    }
+  }
+  .datepicker-calendar-month-section{
+    display:none !important;
+  }
+
+  .datepicker-calendar-container{
+    background-color:#fff !important;
+  }
+
+  .datepicker-calendar-days-container{
+    width:9.2rem !important;
+    .day.today{
+      // color: white !important;
+      // background: #2FB8E9 !important;
+      border-bottom:1px solid #FDAA9A;
+      border-radius:0 !important;
+    }
+    .day.selected{
+      color: white !important;
+      background: #2FB8E9 !important;
+      border:none !important;
+      border-radius:50px !important;
+    }
+    .day{
+      height:1.4rem !important;
+    }
+  }
+  .datepicker-calendar-day-names{
+    width:9.2rem !important;
   }
 }

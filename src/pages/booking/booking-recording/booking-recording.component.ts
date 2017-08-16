@@ -2,6 +2,7 @@ import {Component, ElementRef, ViewChild } from '@angular/core';
 import { NavController, NavParams} from 'ionic-angular';
 
 @Component({
+  selector: 'page-booking-recording',
   templateUrl: 'booking-recording.html',
 })
 
@@ -10,7 +11,7 @@ export class BookingRecording{
 
 	isSearch:boolean=false;
 	items : string[];
-
+    
 	searchAnimate : {};
 	cancelSearch(){
 		this.isSearch=false;
@@ -32,7 +33,7 @@ export class BookingRecording{
 
 	getItems(ev:any){
 		this.initializeItems();
-
+ 
 		let val = ev.target.value;
 
 	    if (val && val.trim() != '') {
@@ -40,5 +41,9 @@ export class BookingRecording{
 	        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
 	      })
 	    }
+	}
+
+	showRecord(ev:any){
+		ev.target;
 	}
 }

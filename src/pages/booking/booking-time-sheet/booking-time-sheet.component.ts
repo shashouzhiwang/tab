@@ -16,7 +16,7 @@ import * as $ from 'jquery';
 export class BookingTimeSheetComponent {
   options: GridsterConfig;
   dashboard: Array<GridsterItem>;
-
+  addBookingPopover : any;
   static colorTimeSheet:Array<Object> = [
       {
       "color": "#65A992",
@@ -209,16 +209,30 @@ export class BookingTimeSheetComponent {
       })
     }
   }
+ 
+
 
   openModel(myEvent){
-    let popover = this.popoverCtrl.create(PopParent,{
-    },{
-      "cssClass":"pop-add-adding"
-    });
+      this.addBookingPopover = this.popoverCtrl.create(
+      PopParent,
+      {
+        popDismiss: this.dismiss,
+        test:"popParent data"
+      },
+      {
+        cssClass:"pop-add-adding"
+      });
     // popover.present()
-    popover.present({
+    this.addBookingPopover.present({
       ev: myEvent
     });
+    console.log(this.addBookingPopover);
+    // popover.dismiss();
+  }
+
+  dismiss(){
+    console.log(this.addBookingPopover);
+    // this.addBookingPopover.dismiss();
   }
 
   //折叠
