@@ -1,0 +1,28 @@
+<!--<ion-header>-->
+
+<!--</ion-header>-->
+
+<ion-content id="bk-select-member">
+  <div class="ub ub-ac bk-list-header">
+    <div class="ub">取消</div>
+    <div class="ub ub-f1 ub-pc">新增预约</div>
+    <div class="ub"></div>
+  </div>
+  <ion-navbar color="primary">
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  </ion-navbar>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      {{ item }}
+    </ion-item>
+    <!--<ion-item>-->
+      <!--陈小姐    15845282145-->
+    <!--</ion-item>-->
+    <!--<ion-item>-->
+      <!--黄小姐    15855282145-->
+    <!--</ion-item>-->
+    <!--<ion-item>-->
+      <!--张小姐    15849682145-->
+    <!--</ion-item>-->
+  </ion-list>
+</ion-content>

@@ -5,6 +5,6 @@ import {Component} from '@angular/core';
   selector: 'select-technicians',
   templateUrl: 'select-technicians.html'
 })
-export class TelectTechnicians {
+export class SelectTechniciansComponent {
 
 }

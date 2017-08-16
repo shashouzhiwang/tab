@@ -1,0 +1,23 @@
+#bk-select-member{
+  ion-navbar{
+    >div.toolbar-background{
+      background: none;
+    }
+  }
+  ion-searchbar{
+    input.searchbar-input{
+      background: white;
+      color: black;
+      border-radius: 1rem;
+      height: 2rem;
+    }
+  }
+  ion-list{
+    ion-item{
+      ion-label{
+        color:black;
+        text-align: left;
+      }
+    }
+  }
+}

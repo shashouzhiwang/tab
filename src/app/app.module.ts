@@ -22,7 +22,9 @@ import { BookingRecording } from '../pages/booking/booking-recording/booking-rec
 import { PopParent } from "../pages/booking/pop-add-booking/pop-parent.component"
 import { AddBooking } from "../pages/booking/pop-add-booking/add/add-booking.component"
 import { BookingTimeSheetComponent } from "../pages/booking/booking-time-sheet/booking-time-sheet.component"
-
+import { SelectTechniciansComponent } from "../pages/booking/pop-add-booking/select-technicians/select-technicians.component"
+import { SelectProjectComponent } from "../pages/booking/pop-add-booking/select-project/select-project.component"
+import { SelectMemberComponent } from "../pages/booking/pop-add-booking/select-member/select-member.component"
 //test
 import 'hammerjs';
 import {
@@ -49,6 +51,9 @@ import { TestGridster } from '../pages/booking/test/test.component';
     BookingTimeSheetComponent,
     PopParent,
     AddBooking,
+    SelectTechniciansComponent,
+    SelectProjectComponent,
+    SelectMemberComponent,
 
     TestGridster,
     TabsPage
@@ -74,6 +79,9 @@ import { TestGridster } from '../pages/booking/test/test.component';
     PopParent,
     AddBooking,
     BookingTimeSheetComponent,
+    SelectTechniciansComponent,
+    SelectProjectComponent,
+    SelectMemberComponent,
 
     TestGridster,
     TabsPage
