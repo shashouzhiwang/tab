@@ -1,185 +1,135 @@
-<ion-content class="tab-home-artboard-page">
-	<ion-row class="h100 frame-row">
-		<ion-col col-7 class="p_0 bd_rt">
-
+<ion-header>
+	<ion-row>
+		<ion-col col-7 class="bor-r p_0">
 			<ion-navbar hideBackButton="true">
-				<ion-searchbar *ngIf="isSearch" (ionInput)="getItems($event)" class="f1" [class.animated]="isSearch" 	placeholder="请输入员工查询"	[class.fadeInRight]="isSearch"></ion-searchbar>
+				<ion-searchbar *ngIf="isSearch" (ionInput)="getItems($event)" class="f1" [class.animated]="isSearch" placeholder="请输入员工查询" [class.fadeInRight]="isSearch"></ion-searchbar>
 				<ion-buttons *ngIf="isSearch" end>
 					<button ion-button clear class="search-cansel" (click)="cancelSearch()">取消</button>
 				</ion-buttons>
-
-				<ion-buttons *ngIf="!isSearch" start [class.animated]="!isSearch" [class.fadeInLeft]="!isSearch">
+				<ion-buttons *ngIf="!isSearch" start [class.animated]="!isSearch" [class.fadeInLeft]="!isSearch" class="ib">
 					<button ion-button icon-only clear class="f1" (click)="goback()">
 								<ion-icon name="md-arrow-back"></ion-icon>
 							</button>
 				</ion-buttons>
 				<ion-title *ngIf="!isSearch" title-center [class.animated]="!isSearch" [class.bounceIn]="!isSearch">预约记录</ion-title>
-				<ion-buttons *ngIf="!isSearch" end>
+				<ion-buttons *ngIf="!isSearch" end class="ib" float-right>
 					<button ion-button icon-only clear class="f1" (click)="canSearch()">
 								<ion-icon name="md-search"></ion-icon>
 							</button>
 				</ion-buttons>
 			</ion-navbar>
-			<ion-content class="left-content">
-				<ion-row class="content-row">
-					<ion-col col-3>
-						<ion-list no-lines class="search-list">
-							<ion-item text-left>最近搜索的会员</ion-item>
-							<ion-item text-left>最近新增的会员</ion-item>
-							<ion-item text-left>最近预约的会员</ion-item>
-							<ion-item text-left>搜索条件一</ion-item>
-							<ion-item text-left>搜索条件二</ion-item>
-						</ion-list>
-					</ion-col>
-					<ion-col col-9>
-						<ion-list class="member-list">
-							<ion-item>
-								<ion-row class="list-title">
-									<span>
-			                  黄女士
-			                </span>
-									<span>
-			                  15800274113
-			                </span>
-									<span>
-			                  vip
-			                </span>
-								</ion-row>
-								<ion-row text-left class="time">上次消费时间：2017.07.20</ion-row>
-							</ion-item>
-							<ion-item>
-								<ion-row class="list-title">
-									<span>
-			                  黄女士
-			                </span>
-									<span>
-			                  15800274113
-			                </span>
-									<span>
-			                  vip
-			                </span>
-								</ion-row>
-								<ion-row text-left class="time">上次消费时间：2017.07.20</ion-row>
-							</ion-item>
-							<ion-item>
-								<ion-row class="list-title">
-									<span>
-			                  黄女士
-			                </span>
-									<span>
-			                  15800274113
-			                </span>
-									<span>
-			                  普通会员
-			                </span>
-								</ion-row>
-								<ion-row text-left class="time">上次消费时间：2017.07.20</ion-row>
-							</ion-item>
-							<ion-item>
-								<ion-row class="list-title">
-									<span>
-			                  黄女士
-			                </span>
-									<span>
-			                  15800274113
-			                </span>
-									<span>
-			                  vip
-			                </span>
-								</ion-row>
-								<ion-row text-left class="time">上次消费时间：2017.07.20</ion-row>
-							</ion-item>
-							<ion-item>
-								<ion-row class="list-title">
-									<span>
-			                  黄女士
-			                </span>
-									<span>
-			                  15800274113
-			                </span>
-									<span>
-			                  vip
-			                </span>
-								</ion-row>
-								<ion-row text-left class="time">上次消费时间：2017.07.20</ion-row>
-							</ion-item>
-						</ion-list>
-					</ion-col>
-				</ion-row>
-			</ion-content>
 		</ion-col>
-
-		<ion-col col-5 class="p_0 ">
+		<ion-col class="p_0">
 			<ion-navbar>
-				<ion-title>记录详情</ion-title>
+				<ion-title title-center>记录详情</ion-title>
 			</ion-navbar>
-			<ion-content class="right-content">
-				<div class="w100 h100 bgc-gray">
-					<ion-list>
-						<ion-item no-lines class="no-bgc">
-							<h2 class="color_blue">Minty1569090908</h2>
-							<p>该会员最近有3条预约记录</p>
-						</ion-item>
+		</ion-col>
+	</ion-row>
+</ion-header>
+<ion-content>
+	<ion-row class="h100">
+		<ion-col col-7 class="bor-r">
+			<ion-row class="content-row h100">
+				<ion-col col-3>
+					<ion-list no-lines class="search-list">
+						<ion-item text-left>最近搜索的会员</ion-item>
+						<ion-item text-left>最近新增的会员</ion-item>
+						<ion-item text-left>最近预约的会员</ion-item>
+						<ion-item text-left>搜索条件一</ion-item>
+						<ion-item text-left>搜索条件二</ion-item>
 					</ion-list>
-					<ion-card>
-						<ion-card-content text-left>
-							<ion-row>
-								<ion-col col-8>
-									<span class="color_gray">时间：</span>2017.07.07 &nbsp; 11:00-13:00
-								</ion-col>
-								<ion-col><span class="color_blue">未完成</span></ion-col>
-							</ion-row>
-							<ion-row>
-								<ion-col><span class="color_gray">项目：</span>去角质洗脸</ion-col>
-							</ion-row>
-							<ion-row>
-								<ion-col><span class="color_gray">员工：</span>陈医生；黄护士；</ion-col>
-							</ion-row>
-							<ion-row>
-								<ion-col><span class="color_gray">床位：</span>床位3</ion-col>
-							</ion-row>
-						</ion-card-content>
-					</ion-card>
-					<ion-card>
-						<ion-card-content text-left>
-							<ion-row>
-								<ion-col col-8>
-									<span class="color_gray">时间：</span>2017.07.07 &nbsp; 11:00-13:00
-								</ion-col>
-								<ion-col><span class="color_green">已完成</span></ion-col>
-							</ion-row>
-							<ion-row>
-								<ion-col><span class="color_gray">项目：</span>去角质洗脸</ion-col>
-							</ion-row>
-							<ion-row>
-								<ion-col><span class="color_gray">员工：</span>陈医生；黄护士；</ion-col>
-							</ion-row>
-							<ion-row>
-								<ion-col><span class="color_gray">床位：</span>床位3</ion-col>
-							</ion-row>
-						</ion-card-content>
-					</ion-card>
-					<ion-card>
-						<ion-card-content text-left>
-							<ion-row>
-								<ion-col col-8>
-									<span class="color_gray">时间：</span>2017.07.07 &nbsp; 11:00-13:00
-								</ion-col>
-								<ion-col><span class="color_gray">已取消</span></ion-col>
-							</ion-row>
-							<ion-row>
-								<ion-col><span class="color_gray">项目：</span>去角质洗脸</ion-col>
-							</ion-row>
-							<ion-row>
-								<ion-col><span class="color_gray">员工：</span>陈医生；黄护士；</ion-col>
-							</ion-row>
-							<ion-row>
-								<ion-col><span class="color_gray">床位：</span>床位3</ion-col>
-							</ion-row>
-						</ion-card-content>
-					</ion-card>
-				</div>
-			</ion-content>
+				</ion-col>
+				<ion-col col-9 class="h100">
+					<ion-scroll scrollY="true" class="h100">
+						<ion-list class="member-list">
+							<ion-item *ngFor="let list of memberList" class="list-title" (click)="getDetail(list.id)">
+								<ion-row>
+									<span>
+                  {{list.name}}
+                </span>
+									<span>
+                  {{list.phone}}
+                </span>
+									<span>
+                  {{list.role}}
+                </span>
+								</ion-row>
+								<ion-row text-left class="time">上次消费时间：{{list.consume_time}}</ion-row>
+							</ion-item>
+						</ion-list>
+					</ion-scroll>
+				</ion-col>
+			</ion-row>
+		</ion-col>
+		<ion-col col-5 class="p_0">
+			<div class="right-content w100 h100 bgc-gray" *ngIf="id">
+				<ion-list>
+					<ion-item no-lines class="no-bgc">
+						<h2 class="color_blue">Minty1569090908</h2>
+						<p>该会员最近有3条预约记录</p>
+					</ion-item>
+				</ion-list>
+				<ion-card>
+					<ion-card-content text-left>
+						<ion-row>
+							<ion-col col-8>
+								<span class="color_gray">时间：</span>2017.07.07 &nbsp; 11:00-13:00
+							</ion-col>
+							<ion-col><span class="color_blue">未完成</span></ion-col>
+						</ion-row>
+						<ion-row>
+							<ion-col><span class="color_gray">项目：</span>去角质洗脸</ion-col>
+						</ion-row>
+						<ion-row>
+							<ion-col><span class="color_gray">员工：</span>陈医生；黄护士；</ion-col>
+						</ion-row>
+						<ion-row>
+							<ion-col><span class="color_gray">床位：</span>床位3</ion-col>
+						</ion-row>
+					</ion-card-content>
+				</ion-card>
+				<ion-card>
+					<ion-card-content text-left>
+						<ion-row>
+							<ion-col col-8>
+								<span class="color_gray">时间：</span>2017.07.07 &nbsp; 11:00-13:00
+							</ion-col>
+							<ion-col><span class="color_green">已完成</span></ion-col>
+						</ion-row>
+						<ion-row>
+							<ion-col><span class="color_gray">项目：</span>去角质洗脸</ion-col>
+						</ion-row>
+						<ion-row>
+							<ion-col><span class="color_gray">员工：</span>陈医生；黄护士；</ion-col>
+						</ion-row>
+						<ion-row>
+							<ion-col><span class="color_gray">床位：</span>床位3</ion-col>
+						</ion-row>
+					</ion-card-content>
+				</ion-card>
+				<ion-card>
+					<ion-card-content text-left>
+						<ion-row>
+							<ion-col col-8>
+								<span class="color_gray">时间：</span>2017.07.07 &nbsp; 11:00-13:00
+							</ion-col>
+							<ion-col><span class="color_gray">已取消</span></ion-col>
+						</ion-row>
+						<ion-row>
+							<ion-col><span class="color_gray">项目：</span>去角质洗脸</ion-col>
+						</ion-row>
+						<ion-row>
+							<ion-col><span class="color_gray">员工：</span>陈医生；黄护士；</ion-col>
+						</ion-row>
+						<ion-row>
+							<ion-col><span class="color_gray">床位：</span>床位3</ion-col>
+						</ion-row>
+					</ion-card-content>
+				</ion-card>
+			</div>
+			<div *ngIf="!id" class="right-content bgc-gray w100 h100">
+				<div class="no-content-wrapper" text-center>暂未选择会员</div>
+			</div>
 		</ion-col>
 	</ion-row>
 </ion-content>

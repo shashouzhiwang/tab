@@ -7,21 +7,35 @@ import {LoginPage} from "./login/login";
   templateUrl: 'member.html'
 })
 export class MemberPage {
-  isSearch:boolean=false;
-
+  isSearch: boolean = false;
+  memberList: any = [];
+  id:number;
 
   constructor(public navCtrl: NavController) {
-
+    for(let i=1;i<15;i++){
+      let list={
+        id:i,
+        name: '黄女士',
+        phone: 15800274113,
+        role: 'vip',
+        consume_time: '2017.07.20',
+      };
+      this.memberList.push(list);
+    }
   }
 
-  cancelSearch(){
-		this.isSearch=false;
-	}
-	canSearch(){
-		this.isSearch=true;
-	}
+  cancelSearch() {
+    this.isSearch = false;
+  }
+  canSearch() {
+    this.isSearch = true;
+  }
 
-  gologin(){
+  gologin() {
     this.navCtrl.push(LoginPage);
+  }
+
+  getMemberDetail(id:number){
+    this.id=id;
   }
 }

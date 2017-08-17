@@ -7,6 +7,7 @@ $color-g-blue: #2FB8E9;
 }
 
 /*--字体--*/
+.color_deepgray{color: #666666;}
 .color_gray{color:#999999;}
 .color_blue{color:$color-g-blue;}
 .color_green{color:#95E8A9;}
@@ -28,7 +29,6 @@ $color-g-blue: #2FB8E9;
 }
 
 
-
 /*height-------------width*/
 .h100{height: 100%;}
 .w100{width: 100%}
@@ -48,16 +48,25 @@ $color-g-blue: #2FB8E9;
 .bd_rt{
 	border-right:1px solid #C8C7CC;
 }
-
+.bor{
+	border:1px solid #C8C7CC;
+}
 /*---背景颜色---*/
-.bgc-gray{background-color:#F2F3F4;}
-
+.bgc-gray{background-color:#F6F6F6;}
+.bgc-hovergray{background-color:#F6F6F6;}
 
 
 //margin
 .mart-1 {
 	margin-top: 1rem;
 }
+
+//padding
+.p_0{padding:0px;}
+.pt0{padding-top: 0}
+.pb0{padding-bottom: 0}
+.pl2{padding-left: 2rem}
+
 
 //no
 .no-bgc{background-color: transparent !important;}
@@ -110,7 +119,7 @@ $color-g-blue: #2FB8E9;
 //ion-card样式
 .card-ios{
 	box-shadow: none;
-	border-radius: 4px;
+	border-radius: 8px;
 }
 
 //bar-button-ios
@@ -132,7 +141,15 @@ $color-g-blue: #2FB8E9;
 	top:0.4rem;
 }
 .search-cansel{
-	background-color: white;
 	color: $color-g-blue;
 	font-size: 1rem;
+}
+
+//
+.no-content-wrapper{
+		width: 100%;
+		position: absolute;
+		top: 35%;
+		font-size: 1.05rem;
+		color: #999999;
 }

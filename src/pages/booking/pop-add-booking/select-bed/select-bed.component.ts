@@ -2,10 +2,10 @@ import {Component, Output, Input, EventEmitter} from '@angular/core';
 import {NavController, NavParams, ViewController} from 'ionic-angular';
 
 @Component({
-  selector: 'select-member',
-  templateUrl: 'select-member.html'
+  selector: 'select-bed',
+  templateUrl: 'select-bed.html'
 })
-export class SelectMemberComponent {
+export class SelectBedComponent {
   @Output() getMember:EventEmitter<boolean> = new EventEmitter();
 
   items;
@@ -23,14 +23,15 @@ export class SelectMemberComponent {
 
   initializeItems() {
     this.items = [
-      '陈小姐   15287458546',
-      '黄小姐   15287458546',
-      '李小姐   15287458546',
-      '张小姐   15287458546',
-      '王小姐   15287458546',
-      '夏小姐   15287458546',
-      '曹小姐   15287458546',
-      '马小姐   15287458546',
+      '雅苑   床位1号',
+      '雅苑   床位2号',
+      '雅苑   床位3号',
+      '雅苑   床位4号',
+      '雅苑   床位5号',
+      '雅苑   床位6号',
+      '雅苑   床位7号',
+      '雅苑   床位8号',
+      '雅苑   床位9号',
     ];
   }
 
@@ -51,7 +52,7 @@ export class SelectMemberComponent {
 
   selectItem(name){
     let data = {
-      memberName:name
+      bedName:name
     }
     this.viewCtrl.dismiss(data);
   }

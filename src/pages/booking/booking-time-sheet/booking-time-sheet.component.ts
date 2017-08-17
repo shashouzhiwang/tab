@@ -209,30 +209,28 @@ export class BookingTimeSheetComponent {
       })
     }
   }
- 
-
-
-  openModel(myEvent){
-      this.addBookingPopover = this.popoverCtrl.create(
-      PopParent,
-      {
-        popDismiss: this.dismiss,
-        test:"popParent data"
-      },
-      {
-        cssClass:"pop-add-adding"
-      });
-    // popover.present()
-    this.addBookingPopover.present({
-      ev: myEvent
-    });
-    console.log(this.addBookingPopover);
-    // popover.dismiss();
-  }
 
   dismiss(){
-    console.log(this.addBookingPopover);
     // this.addBookingPopover.dismiss();
+  }
+
+  openModel(myEvent){
+    //   this.addBookingPopover = this.popoverCtrl.create(
+    //   PopParent,
+    //   {
+    //     popDismiss: this.dismiss,
+    //     test:"popParent data"
+    //   },
+    //   {
+    //     cssClass:"pop-add-adding"
+    //   });
+    // // popover.present()
+    // this.addBookingPopover.present({
+    //   ev: myEvent
+    // });
+
+    let modal = this.modalCtrl.create(PopParent, myEvent);
+    modal.present();
   }
 
   //折叠

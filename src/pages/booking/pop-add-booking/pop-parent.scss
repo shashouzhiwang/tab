@@ -1,15 +1,16 @@
-.popover-ios{
-  .popover-wrapper{
-    .popover-content{
-      background: #F1F2F4;
-      padding: 0;
-
-
+ion-modal{
+  .modal-wrapper{
+//     .popover-content{
+//       background: #F1F2F4;
+//       padding: 0;
       ion-content{
-        background: none;
+        background: #F1F2F4;
+        width: 80%;
+        left: 10%;
         .scroll-content{
           margin-left: 0!important;
           width: 100%;
+          border-radius: 1rem;
         }
         .bk-list-header{
           background: #F5F5F5;
@@ -40,7 +41,7 @@
           }
         }
       }
-    }
+    // }
     ion-item{
       min-height: 3rem;
       ion-label{

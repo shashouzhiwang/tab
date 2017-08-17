@@ -1,4 +1,4 @@
-page-member-sdc{
+page-member-edit{
 		.frame-row{
 	    height: 100%;
 	    >.col{
@@ -9,7 +9,9 @@ page-member-sdc{
 	    margin-left: 0;
 	    margin-right: 0;
 	  }
-
+		.card-ios .item-ios.item-block .item-inner{
+			border-bottom: 0.55px solid #EFEFF4;
+		}
 	  .list-ios > .item-block:first-child{
 	    border-top: none;
 	  }
@@ -21,5 +23,5 @@ page-member-sdc{
 	  .fs_0.8{
 	    font-size: 0.8rem !important;
 	  }
-		
+
 }

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-row>
+		<ion-col col-5 class="bor-r p_0">
+      <ion-navbar>
+        <ion-title text-center>
+          <span padding class="dp-ib">店内员工</span>
+        </ion-title>
+      </ion-navbar>
+		</ion-col>
+		<ion-col class="p_0">
+			<ion-navbar>
+				<ion-title title-center>{{type}}</ion-title>
+			</ion-navbar>
+		</ion-col>
+	</ion-row>
+</ion-header>
+<ion-content class="tab-home-artboard-page">
+	<ion-row class="h100 frame-row">
+		<ion-col col-5 class="p_0 bd_rt">
+			<page-member-detail [id]="id" [isJump]="true" [type]="type" (outType)="clickCardList($event)"></page-member-detail>
+		</ion-col>
+
+		<ion-col col-7 class="p_0 bgc-gray">
+			<page-member-sdc [hidden]="type!='sdc'"></page-member-sdc>
+			<page-member-cbc [hidden]="type!='cbc'"></page-member-cbc>
+			<page-member-edit [hidden]="type!='edit'"></page-member-edit>
+		</ion-col>
+	</ion-row>
+</ion-content>

@@ -2,47 +2,31 @@
   <div class="ub ub-ac bk-list-header">
     <div class="ub">取消</div>
     <div class="ub ub-f1 ub-pc">新增预约</div>
-    <div class="ub">确定</div>
+    <div class="ub" (click)="doSubmit($event)">确定</div>
   </div>
-  <div class="bk-list-content">
-    <div class="bk-select-technicians-warp">
-      <div class="bk-select-technicians-title">
+
+  <form (submit)="doSubmit($event)" [formGroup]="langForm">
+    <ion-list radio-group formControlName="langs">
+      <ion-list-header>
         修眉系列
-      </div>
+      </ion-list-header>
       <ion-item>
         <ion-label>韩式修眉</ion-label>
-        <ion-radio checked="false" value="go"></ion-radio>
+        <ion-radio value="韩式修眉" checked="true"></ion-radio>
       </ion-item>
       <ion-item>
         <ion-label>欧式修眉</ion-label>
-        <ion-radio checked="false" value="go"></ion-radio>
+        <ion-radio value="欧式修眉"></ion-radio>
       </ion-item>
       <ion-item>
         <ion-label>美式修眉</ion-label>
-        <ion-radio checked="false" value="go"></ion-radio>
-      </ion-item>
-    </div>
-    <div class="bk-select-technicians-warp">
-      <div class="bk-select-technicians-title">
-        按摩
-      </div>
-      <ion-item>
-        <ion-label>背部按摩</ion-label>
-        <ion-radio checked="false" value="go"></ion-radio>
+        <ion-radio value="美式修眉"></ion-radio>
       </ion-item>
       <ion-item>
-        <ion-label>头部按摩</ion-label>
-        <ion-radio checked="false" value="go"></ion-radio>
+        <ion-label>中式修眉</ion-label>
+        <ion-radio value="中式修眉"></ion-radio>
       </ion-item>
-      <ion-item>
-        <ion-label>全身按摩</ion-label>
-        <ion-radio checked="false" value="go"></ion-radio>
-      </ion-item>
-    </div>
-  </div>
+    </ion-list>
+  </form>
 </ion-content>
 
-
-<style>
-
-</style>

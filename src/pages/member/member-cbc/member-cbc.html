@@ -1,0 +1,73 @@
+<ion-grid>
+	<ion-grid *ngFor="let list of cdcList">
+		<ion-card (click)="list.showUseDetail=!list.showUseDetail">
+			<ion-card-content text-left>
+				<ion-row>
+					<ion-col col-8>
+						<span class="color_blue" style="font-size:1.05rem">国庆储值卡A（普通套餐）</span>
+					</ion-col>
+				</ion-row>
+				<ion-row>
+					<ion-col col-6 class="pb0">总余额：￥10000.00</ion-col>
+					<ion-col col-6 class="pb0">总次数：20</ion-col>
+					<ion-col col-6 class="pt0">实收金额：￥10000.00</ion-col>
+					<ion-col col-6 class="pt0">剩余次数：19</ion-col>
+				</ion-row>
+				<ion-row>
+					<ion-col class="color_deepgray"><span>美白护理（10）；韩式修眉（9）</span></ion-col>
+				</ion-row>
+				<ion-row>
+					<ion-col><span class="color_gray">办卡日前：2016.08.01&nbsp;13:40:34</span></ion-col>
+				</ion-row>
+				<ion-row>
+					<ion-col><span class="color_gray">有效期：长期有效</span></ion-col>
+					<ion-col text-right *ngIf="list.showUseDetail">
+						<ion-icon name="arrow-down"></ion-icon>
+					</ion-col>
+					<ion-col text-right *ngIf="!list.showUseDetail">
+						<ion-icon name="arrow-up"></ion-icon>
+					</ion-col>
+				</ion-row>
+			</ion-card-content>
+		</ion-card>
+		<ion-grid class="color_gray" *ngIf="list.showUseDetail">
+			<p class="fs-0.85 pl2">使用详情</p>
+			<ion-card class="bgc-gray bor">
+				<ion-card-content text-left>
+					<ion-row>
+						<ion-col class="pb0">韩式绣眉</ion-col>
+						<ion-col class="pb0">消费：-1</ion-col>
+					</ion-row>
+					<ion-row>
+						<ion-col>2017.06.01&nbsp;13:40:34</ion-col>
+						<ion-col>剩余：9</ion-col>
+					</ion-row>
+				</ion-card-content>
+			</ion-card>
+			<ion-card class="bgc-gray bor">
+				<ion-card-content text-left>
+					<ion-row>
+						<ion-col class="pb0">美白护理</ion-col>
+						<ion-col class="pb0">办卡：+10</ion-col>
+					</ion-row>
+					<ion-row>
+						<ion-col>2017.06.01&nbsp;13:40:34</ion-col>
+						<ion-col>剩余：9</ion-col>
+					</ion-row>
+				</ion-card-content>
+			</ion-card>
+			<ion-card class="bgc-gray bor">
+				<ion-card-content text-left>
+					<ion-row>
+						<ion-col class="pb0">韩式绣眉</ion-col>
+						<ion-col class="pb0">办卡：+10</ion-col>
+					</ion-row>
+					<ion-row>
+						<ion-col>2017.06.01&nbsp;13:40:34</ion-col>
+						<ion-col>剩余：9</ion-col>
+					</ion-row>
+				</ion-card-content>
+			</ion-card>
+		</ion-grid>
+	</ion-grid>
+</ion-grid>

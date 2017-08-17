@@ -1,118 +1,71 @@
-<ion-content>
-  <ion-row class="frame-row">
-    <ion-col col-7 class="bor-r">
-      <ion-header>
-        <ion-navbar>
-          <ion-searchbar *ngIf="isSearch" (ionInput)="getItems($event)" class="f1" [class.animated]="isSearch" placeholder="请输入员工查询" [class.fadeInRight]="isSearch"></ion-searchbar>
-          <ion-buttons *ngIf="isSearch" end>
-            <button ion-button clear class="search-cansel" (click)="cancelSearch()">取消</button>
-          </ion-buttons>
+<ion-header>
+  <ion-row>
+		<ion-col col-7 class="bor-r p_0">
+      <ion-navbar>
+        <ion-searchbar *ngIf="isSearch" (ionInput)="getItems($event)" class="f1" [class.animated]="isSearch" placeholder="请输入员工查询" [class.fadeInRight]="isSearch"></ion-searchbar>
+        <ion-buttons *ngIf="isSearch" end>
+          <button ion-button clear class="search-cansel" (click)="cancelSearch()">取消</button>
+        </ion-buttons>
 
-          <ion-title text-center *ngIf="!isSearch">
-            <span padding class="ib" (click)="gologin()">会员</span>
-          </ion-title>
-          <ion-buttons end *ngIf="!isSearch">
-            <button ion-button icon-only clear class="f1">
-                <ion-icon ios="ios-add" md="md-add" class="color_blue fw"></ion-icon>
-          </button>
-          </ion-buttons>
-          <ion-buttons end *ngIf="!isSearch" (click)="canSearch()">
-            <button ion-button icon-only clear class="f1">
-                <ion-icon name="md-search"></ion-icon>
-          </button>
-          </ion-buttons>
-        </ion-navbar>
-      </ion-header>
-      <ion-content class="left-content">
-        <ion-row class="content-row">
-          <ion-col col-3>
-            <ion-list no-lines class="search-list">
-              <ion-item text-left>最近搜索的会员</ion-item>
-              <ion-item text-left>最近新增的会员</ion-item>
-              <ion-item text-left>最近预约的会员</ion-item>
-              <ion-item text-left>搜索条件一</ion-item>
-              <ion-item text-left>搜索条件二</ion-item>
-            </ion-list>
-          </ion-col>
-          <ion-col col-9>
+        <ion-title text-center *ngIf="!isSearch">
+          <span padding class="ib" (click)="gologin()">会员</span>
+        </ion-title>
+        <ion-buttons end *ngIf="!isSearch">
+          <button ion-button icon-only clear class="f1">
+                    <ion-icon ios="ios-add" md="md-add" class="color_blue fw"></ion-icon>
+              </button>
+        </ion-buttons>
+        <ion-buttons end *ngIf="!isSearch" (click)="canSearch()">
+          <button ion-button icon-only clear class="f1">
+                    <ion-icon name="md-search"></ion-icon>
+              </button>
+        </ion-buttons>
+      </ion-navbar>
+		</ion-col>
+		<ion-col class="p_0">
+			<ion-navbar>
+				<ion-title title-center>会员详情</ion-title>
+			</ion-navbar>
+		</ion-col>
+	</ion-row>
+</ion-header>
+<ion-content>
+  <ion-row class="h100">
+    <ion-col col-7 class="bor-r">
+      <ion-row class="content-row h100">
+        <ion-col col-3>
+          <ion-list no-lines class="search-list">
+            <ion-item text-left>最近搜索的会员</ion-item>
+            <ion-item text-left>最近新增的会员</ion-item>
+            <ion-item text-left>最近预约的会员</ion-item>
+            <ion-item text-left>搜索条件一</ion-item>
+            <ion-item text-left>搜索条件二</ion-item>
+          </ion-list>
+        </ion-col>
+        <ion-col col-9 class="h100">
+          <ion-scroll scrollY="true" class="h100">
             <ion-list class="member-list">
-              <ion-item>
-                <ion-row class="list-title">
+              <ion-item *ngFor="let list of memberList" class="list-title" (click)="getMemberDetail(list.id)">
+                <ion-row>
                   <span>
-                  黄女士
+                  {{list.name}}
                 </span>
                   <span>
-                  15800274113
+                  {{list.phone}}
                 </span>
                   <span>
-                  vip
-                </span>
-                </ion-row>
-                <ion-row text-left class="time">上次消费时间：2017.07.20</ion-row>
-              </ion-item>
-              <ion-item>
-                <ion-row class="list-title">
-                  <span>
-                  黄女士
-                </span>
-                  <span>
-                  15800274113
-                </span>
-                  <span>
-                  vip
+                  {{list.role}}
                 </span>
                 </ion-row>
-                <ion-row text-left class="time">上次消费时间：2017.07.20</ion-row>
-              </ion-item>
-              <ion-item>
-                <ion-row class="list-title">
-                  <span>
-                  黄女士
-                </span>
-                  <span>
-                  15800274113
-                </span>
-                  <span>
-                  普通会员
-                </span>
-                </ion-row>
-                <ion-row text-left class="time">上次消费时间：2017.07.20</ion-row>
-              </ion-item>
-              <ion-item>
-                <ion-row class="list-title">
-                  <span>
-                  黄女士
-                </span>
-                  <span>
-                  15800274113
-                </span>
-                  <span>
-                  vip
-                </span>
-                </ion-row>
-                <ion-row text-left class="time">上次消费时间：2017.07.20</ion-row>
-              </ion-item>
-              <ion-item>
-                <ion-row class="list-title">
-                  <span>
-                  黄女士
-                </span>
-                  <span>
-                  15800274113
-                </span>
-                  <span>
-                  vip
-                </span>
-                </ion-row>
-                <ion-row text-left class="time">上次消费时间：2017.07.20</ion-row>
+                <ion-row text-left class="time">上次消费时间：{{list.consume_time}}</ion-row>
               </ion-item>
             </ion-list>
-          </ion-col>
-        </ion-row>
-      </ion-content>
+          </ion-scroll>
+        </ion-col>
+      </ion-row>
     </ion-col>
     <ion-col col-5>
-      <page-member-detail></page-member-detail>
+      <page-member-detail [id]="id" [isJump]="false"></page-member-detail>
     </ion-col>
   </ion-row>
 </ion-content>

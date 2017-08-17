@@ -1,4 +1,4 @@
-page-member-sdc{
+page-member-cbc{
 		.frame-row{
 	    height: 100%;
 	    >.col{
@@ -16,10 +16,10 @@ page-member-sdc{
 	  .list-ios .item-block .item-inner{
 	    border-bottom: 0.55px solid #EFEFF4;
 	  }
-
-
 	  .fs_0.8{
 	    font-size: 0.8rem !important;
 	  }
-		
+		.ion-ios-arrow-down,.ion-ios-arrow-up{
+			font-size: 1.4rem;
+		}
 }

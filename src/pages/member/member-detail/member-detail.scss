@@ -32,6 +32,9 @@ page-member-detail {
       font-size: 1rem;
       color: black;
     }
+    .item-ios{
+      border-bottom: none !important;
+    }
   }
   .member-detail{
       padding-left: 30px;
@@ -45,8 +48,8 @@ page-member-detail {
     margin-right: 0;
     font-size: 0.9rem;
     color: #999999;
-    border-top: 1px solid #C8C7CC;
-    border-bottom: 1px solid #C8C7CC;
+    border-top: 1px solid #EFEFF4;
+    border-bottom: 1px solid #EFEFF4;
     .col{
       padding-top: 1rem;
       padding-bottom: 1rem;
@@ -61,7 +64,7 @@ page-member-detail {
     padding-right: 16px;
   }
   .bor-r-de{
-      border-right: 1px solid #C8C7CC;
+      border-right: 1px solid #EFEFF4;
   }
   .item-md ion-avatar img{
     width: 4rem;
@@ -74,12 +77,15 @@ page-member-detail {
     border-top: none;
   }
   .list-ios > .item-block:last-child{
-    border-bottom: none;
+    border-bottom:1px solid #EFEFF4;
   }
   .card-list{
     padding-left: 16px;
     padding-right: 16px;
     margin-top: 4rem;
+    .item:hover{
+      background-color: #F6F6F6;
+    }
     .item-block{
       min-height: 3.4rem;
     }

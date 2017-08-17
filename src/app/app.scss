@@ -11,6 +11,10 @@ body{
 	font-size:1rem;
 }
 
+p{
+  margin-top: 0;
+  margin-bottom: 0;
+}
 .dnd-drag-start {
   -moz-transform:scale(0.8);
   -webkit-transform:scale(0.8);
@@ -71,6 +75,17 @@ ion-tabs .tabbar[role='tablist']{
 }
 .back-button-ios{
   min-height: 2.2rem;
+}
+ion-app.ios{
+  font-size: 0.85rem;
+}
+.toolbar-ios{
+  padding-right: 0rem;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+ion-header{
+  padding-left: 3.7rem;
 }
 // App Global Sass
 // --------------------------------------------------

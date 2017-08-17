@@ -12,6 +12,9 @@ import { AboutPage } from '../pages/about/about';
 import { MemberPage } from '../pages/member/member';
 import { MemberDetailPage } from '../pages/member/member-detail/member-detail';
 import { MemberSdcPage } from '../pages/member/member-sdc/member-sdc';
+import { MemberCbcPage } from '../pages/member/member-cbc/member-cbc';
+import { MemberEditPage } from '../pages/member/member-edit/member-edit';
+import { MemberInfoPage } from '../pages/member/member-info/member-info';
 import { LoginPage } from '../pages/member/login/login';
 
 
@@ -29,6 +32,7 @@ import { BookingTimeSheetComponent } from "../pages/booking/booking-time-sheet/b
 import { SelectTechniciansComponent } from "../pages/booking/pop-add-booking/select-technicians/select-technicians.component"
 import { SelectProjectComponent } from "../pages/booking/pop-add-booking/select-project/select-project.component"
 import { SelectMemberComponent } from "../pages/booking/pop-add-booking/select-member/select-member.component"
+import { SelectBedComponent } from "../pages/booking/pop-add-booking/select-bed/select-bed.component"
 //test
 import 'hammerjs';
 import {
@@ -49,6 +53,9 @@ import { TestGridster } from '../pages/booking/test/test.component';
     MemberPage,
     MemberDetailPage,
     MemberSdcPage,
+    MemberCbcPage,
+    MemberEditPage,
+    MemberInfoPage,
     LoginPage,
 
     BookingPage,
@@ -59,6 +66,7 @@ import { TestGridster } from '../pages/booking/test/test.component';
     SelectTechniciansComponent,
     SelectProjectComponent,
     SelectMemberComponent,
+    SelectBedComponent,
 
     TestGridster,
     TabsPage
@@ -89,6 +97,9 @@ import { TestGridster } from '../pages/booking/test/test.component';
     MemberPage,
     MemberDetailPage,
     MemberSdcPage,
+    MemberCbcPage,
+    MemberEditPage,
+    MemberInfoPage,
     LoginPage,
 
     BookingPage,
@@ -99,6 +110,7 @@ import { TestGridster } from '../pages/booking/test/test.component';
     SelectTechniciansComponent,
     SelectProjectComponent,
     SelectMemberComponent,
+    SelectBedComponent,
 
     TestGridster,
     TabsPage

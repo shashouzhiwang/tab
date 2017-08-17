@@ -26,7 +26,6 @@ page-member {
     }
   }
   .list-title{
-    margin-bottom: 0.5rem;
     span{
       color: black;
       margin-right: 1rem;
@@ -36,12 +35,15 @@ page-member {
     border-top: none;
   }
   .list-ios .item-block .item-inner{
-    border-bottom: 0.55px solid #C8C7CC;
+    border-bottom: 0.55px solid #EFEFF4;
   }
 
   .member-list{
     padding-top: 0.5rem;
     margin-top: 0;
+    .item:hover{
+      background-color:#F6F6F6;
+    }
     .row{
       margin-left: 0;
       margin-right: 0;
@@ -59,7 +61,7 @@ page-member {
       padding-left: 0;
     }
     .item-block:last-child{
-        border-bottom: 0.55px solid #C8C7CC;
+        border-bottom: 0.55px solid #EFEFF4;
       }
     .time{
       font-size: 0.85rem;

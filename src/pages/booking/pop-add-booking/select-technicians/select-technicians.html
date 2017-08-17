@@ -2,47 +2,30 @@
   <div class="ub ub-ac bk-list-header">
     <div class="ub">取消</div>
     <div class="ub ub-f1 ub-pc">新增预约</div>
-    <div class="ub">确定</div>
+    <div class="ub" (click)="doSubmit($event)">确定</div>
   </div>
-  <div class="bk-list-content">
-    <div class="bk-select-technicians-warp">
-      <div class="bk-select-technicians-title">
+
+  <form (submit)="doSubmit($event)" [formGroup]="langForm">
+    <ion-list radio-group formControlName="technicians">
+      <ion-list-header>
         医生
-      </div>
+      </ion-list-header>
       <ion-item>
         <ion-label>陈医生</ion-label>
-        <ion-radio checked="false" value="go"></ion-radio>
+        <ion-radio value="陈医生" checked="true"></ion-radio>
       </ion-item>
       <ion-item>
         <ion-label>黄医生</ion-label>
-        <ion-radio checked="false" value="go"></ion-radio>
+        <ion-radio value="黄医生"></ion-radio>
       </ion-item>
       <ion-item>
         <ion-label>李医生</ion-label>
-        <ion-radio checked="false" value="go"></ion-radio>
-      </ion-item>
-    </div>
-    <div class="bk-select-technicians-warp">
-      <div class="bk-select-technicians-title">
-        护士
-      </div>
-      <ion-item>
-        <ion-label>陈护士</ion-label>
-        <ion-radio checked="false" value="go"></ion-radio>
+        <ion-radio value="李医生"></ion-radio>
       </ion-item>
       <ion-item>
-        <ion-label>黄护士</ion-label>
-        <ion-radio checked="false" value="go"></ion-radio>
+        <ion-label>minty医生</ion-label>
+        <ion-radio value="minty医生"></ion-radio>
       </ion-item>
-      <ion-item>
-        <ion-label>李护士</ion-label>
-        <ion-radio checked="false" value="go"></ion-radio>
-      </ion-item>
-    </div>
-  </div>
+    </ion-list>
+  </form>
 </ion-content>
-
-
-<style>
-
-</style>

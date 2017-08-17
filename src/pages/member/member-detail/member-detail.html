@@ -1,11 +1,5 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title text-center>
-      <span padding class="dp-ib">店内员工</span>
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-<ion-content class="right-content">
+
+<div class="right-content" [hidden]="!_id">
   <ion-list class="member-info" no-lines>
     <ion-item>
       <ion-avatar item-start>
@@ -63,22 +57,25 @@
     </ion-row>
   </div>
   <ion-list class="card-list">
-    <ion-item (click)="goSdc()">
+    <ion-item (click)="goSdc()" [ngClass]="{'bgc-hovergray':type=='sdc'}">
       <ion-label>
         储值卡
       </ion-label>
       <ion-icon item-end ios="ios-add" md="md-add"></ion-icon>
     </ion-item>
-    <ion-item>
+    <ion-item (click)="goCdc()" [ngClass]="{'bgc-hovergray':type=='cbc'}">
       <ion-label>
         套餐次卡
       </ion-label>
       <ion-icon item-end ios="ios-add" md="md-add"></ion-icon>
     </ion-item>
-    <ion-item>
+    <ion-item (click)="goEdit()" [ngClass]="{'bgc-hovergray':type=='edit'}">
       <ion-label>
         会员信息
       </ion-label>
     </ion-item>
   </ion-list>
-</ion-content>
+</div>
+<div *ngIf="!_id" class="right-content">
+  <div class="no-content-wrapper" text-center>点击左边会员查看会员信息</div>
+</div>
