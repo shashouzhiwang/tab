@@ -4,24 +4,32 @@
   </div>
   <div class="calendar ub" >
     
-
+    <div class="calendar-row-title ub" (click)="moveGrid($event);">
+      <div class="calendar-title ub ub-ac ub-ver" *ngFor="let bedList of bed"> 
+        <div class="ub">{{bedList.name}}</div>
+        <div class="ub">{{bedList.number}}</div>
+      </div>
+    </div>
+    <div class="calendar-col-time ub ub-ver" >
+      <div class="calendar-unit-time ub ub-ver" *ngFor="let item of timePeriod">
+        <div class="ub ub-pe ub-ae">{{item.name}}</div>
+      </div>
+    </div>
     <gridster [options]="options" id="gridster" style="background-color: rgba(255,255,255,0.5);">
-        <div class="calendar-col-time ub ub-ver">
-          <div class="calendar-unit-time ub ub-ver" *ngFor="let item of timePeriod">
-            <div class="ub ub-pe ub-ae">{{item.name}}</div>
+
+        <div class="calendar-col-grid ub">
+          <div class="calendar-col first-col ub ub-ver" *ngFor="let bedList of bed">
+  <!--         <div class="calendar-title ub ub-ac ub-ver">
+            <div class="ub">{{bedList.name}}</div>
+            <div class="ub">{{bedList.number}}</div>
+          </div> -->
+          <div class="calendar-col-content">
+            <div class="calendar-unit" *ngFor="let item of timePeriod" (click)="openModel({charNum: 0});">
+              <div></div>
+              <div></div>
+            </div>
           </div>
-        </div>
-        <div class="calendar-col first-col ub ub-ver" *ngFor="let bedList of bed">
-        <div class="calendar-title ub ub-ac ub-ver">
-          <div class="ub">{{bedList.name}}</div>
-          <div class="ub">{{bedList.number}}</div>
-        </div>
-        <div class="calendar-col-content">
-          <div class="calendar-unit" *ngFor="let item of timePeriod" (click)="openModel({charNum: 0});">
-            <div></div>
-            <div></div>
-          </div>
-        </div>
+        </div>  
       </div>
       <gridster-item [item]="item" *ngFor="let item of dashboard" >
         <div class="gridster-cell-warp" [ngStyle]="{'background-color':item.bgcolor,'color':item.color}">

@@ -1,13 +1,32 @@
 $calendar-unit-height:4rem;
 $calendar-unit-width:8rem;
 .calendar{
+	.calendar-row-title{
+		position:absolute;
+		left:$calendar-unit-width/2;
+		top:0;
+		.calendar-title{
+			padding:1rem 0;
+			font-size: 1rem;
+			text-align: center;
+			border-bottom: 1px solid #ccc;
+			height: $calendar-unit-height;
+			width: $calendar-unit-width;
+			color:#000;
+			>div{
+				&:first-child{
+					font-size: .8rem;
+				}
+			}
+		}
+	}
 
 	width:100%;
 	height:100%;
 	.calendar-col-time{
 		width: $calendar-unit-width/2;
-		margin-top: -$calendar-unit-height;
-    	margin-left: -$calendar-unit-width/2;;
+		margin-top: 0;
+    	margin-left: 0;
 		.calendar-unit-time{
 			width: $calendar-unit-width/2;
 			height: $calendar-unit-height;
@@ -28,21 +47,7 @@ $calendar-unit-width:8rem;
   }
 	.calendar-col{
 		width: $calendar-unit-width;
-		margin-top:-$calendar-unit-height;
-		.calendar-title{
-			padding:1rem 0;
-			font-size: 1rem;
-			text-align: center;
-			border-bottom: 1px solid #ccc;
-			height: $calendar-unit-height;
-			width: $calendar-unit-width;
-			color:#000;
-			>div{
-				&:first-child{
-					font-size: .8rem;
-				}
-			}
-		}
+		margin-top:0;
 		.calendar-col-content{
 			.calendar-unit{
 				width: $calendar-unit-width;

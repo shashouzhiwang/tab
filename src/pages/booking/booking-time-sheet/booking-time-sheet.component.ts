@@ -8,6 +8,8 @@ import { PopParent } from "../pop-add-booking/pop-parent.component"
 import { TestGridster } from '../test/test.component';
 
 import * as $ from 'jquery';
+import './jquery.event.move'; 
+import 'jquery.event.swipe';
 
 @Component({
   selector: 'booking-time-sheet',
@@ -60,6 +62,37 @@ export class BookingTimeSheetComponent {
 
   static itemInit(item, itemComponent) {
     console.info('itemInitialized', item, itemComponent);
+
+    let startX, startY,startLeft;
+    let $grid = $("#gridster");
+    // let $gridContent = $(".calendar-col-content");
+    // console.log($gridContent.length,'----');
+    $grid
+      .on("touchstart", function(e) {
+        e.preventDefault();
+        startX = e.originalEvent.changedTouches[0].pageX;
+        startY = e.originalEvent.changedTouches[0].pageY;
+        startLeft = $grid.css('left');
+      })
+      .on("touchmove", function(e) {
+        // console.log(e.originalEvent,'move');
+        e.preventDefault();
+        let moveEndX = e.originalEvent.changedTouches[0].pageX;
+        let moveEndY = e.originalEvent.changedTouches[0].pageY;
+        let  X = moveEndX - startX;
+        let  Y = moveEndY - startY;
+        console.log(X,Y);
+        if ( Math.abs(X) > Math.abs(Y) && X > 0 ) {
+          console.log("left 2 right");
+        }
+        else if ( Math.abs(X) > Math.abs(Y) && X < 0 ) {
+          // console.log("right 2 left");
+          console.log($grid.length);
+          console.log(startLeft);
+          $grid.css('left',parseFloat(startLeft)+Math.abs(X));
+
+        }
+      });
   }
 
   emptyCellClick(event, item) {
@@ -74,9 +107,30 @@ export class BookingTimeSheetComponent {
     public popoverCtrl: PopoverController
   ) {
     this.generatorTime();
+    $(document).ready(function(){
+      $('#gridster')
+      .on('movestart', function(e) {
+        // move .mydiv horizontally
+        console.log(e);
+        console.log("movestart:"+ e.distX + e.distY);
+
+      })
+      .on('move', function(e) {
+        // move .mydiv horizontally
+        console.log("move:"+ e.distX + e.distY);
+
+      })
+      .on('moveend', function(e) {
+        // move .mydiv horizontally
+        console.log("left:"+ e.distX + e.distY);
+
+      }); 
+
+    });
   }
 
   ngOnInit() {
+
     this.options = {
       gridType: 'fixed',
       compactType: 'none',
@@ -193,6 +247,14 @@ export class BookingTimeSheetComponent {
     {
       name:"雅苑",
       number:"床位1号(1)"
+    },
+    {
+      name:"雅苑",
+      number:"床位2号(2)"
+    },
+    {
+      name:"雅苑",
+      number:"床位1号(1)"
     }
     ];
 
@@ -253,5 +315,10 @@ export class BookingTimeSheetComponent {
     }
   }
 
+  moveGrid(e){
+
+    // $(e.target)
+    
+  }
 
 }
