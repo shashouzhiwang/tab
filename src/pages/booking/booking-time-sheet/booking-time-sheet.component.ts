@@ -8,8 +8,8 @@ import { PopParent } from "../pop-add-booking/pop-parent.component"
 import { TestGridster } from '../test/test.component';
 
 import * as $ from 'jquery';
-import './jquery.event.move'; 
-import 'jquery.event.swipe';
+// import './jquery.event.move';
+// import 'jquery.event.swipe';
 
 @Component({
   selector: 'booking-time-sheet',
@@ -89,7 +89,7 @@ export class BookingTimeSheetComponent {
           // console.log("right 2 left");
           console.log($grid.length);
           console.log(startLeft);
-          $grid.css('left',parseFloat(startLeft)+Math.abs(X));
+          $grid.css('left',parseFloat(startLeft)-Math.abs(X));
 
         }
       });
@@ -124,7 +124,7 @@ export class BookingTimeSheetComponent {
         // move .mydiv horizontally
         console.log("left:"+ e.distX + e.distY);
 
-      }); 
+      });
 
     });
   }
@@ -318,7 +318,7 @@ export class BookingTimeSheetComponent {
   moveGrid(e){
 
     // $(e.target)
-    
+
   }
 
 }
