@@ -1,0 +1,261 @@
+<ion-header>
+	<ion-navbar>
+		<ion-buttons start (click)="dismiss()">
+			<button ion-button icon-only clear>
+					<ion-icon ios="ios-close" md="md-close" class="color_blue fw"></ion-icon>
+			</button>
+		</ion-buttons>
+		<ion-title>
+			新增会员
+		</ion-title>
+		<ion-buttons end (click)="submit()">
+			<button ion-button icon-only clear type="submit">
+					<ion-icon ios="ios-checkmark" md="md-checkmark" class="color_blue fw"></ion-icon>
+			</button>
+		</ion-buttons>
+	</ion-navbar>
+</ion-header>
+<ion-content>
+	<form #addMemberForm="ngForm" (ngSubmit)="submit(addMemberForm.value)">
+		<ion-grid class="pb3">
+			<ion-card>
+				<ion-row class="pb1">
+					<ion-col col-6>
+						<ion-item>
+							<ion-label floating><span class="color_red marr0_4">*</span>顾客</ion-label>
+							<ion-input type="text" name="name" [(ngModel)]="memberInfo.name"></ion-input>
+						</ion-item>
+					</ion-col>
+					<ion-col col-6>
+						<ion-item>
+							<ion-label floating>级别</ion-label>
+							<ion-input type="text"></ion-input>
+						</ion-item>
+					</ion-col>
+					<ion-col col-6>
+						<ion-item>
+							<ion-label floating>性别</ion-label>
+							<ion-input type="text" name="gendar" [(ngModel)]="memberInfo.gendar"></ion-input>
+						</ion-item>
+					</ion-col>
+					<!-- <ion-col col-6>
+					<ion-list no-lines radio-group name="sex" class="sex-radio pl1">
+						<ion-row class="bor2-b">
+							<ion-col col-12 class="pb0 pt0 pl0">
+								<span class="fs0_85 color_gray">性别</span>
+							</ion-col>
+							<ion-col col-4 class="pt0 pl0">
+								<ion-item no-lines class="pl0">
+									<ion-label class="fs-1">男</ion-label>
+									<ion-radio value="1"></ion-radio>
+								</ion-item>
+							</ion-col>
+							<ion-col col-4 class="pt0 pl0">
+								<ion-item no-lines class="pl0">
+									<ion-label class="fs-1">女</ion-label>
+									<ion-radio value="0"></ion-radio>
+								</ion-item>
+							</ion-col>
+						</ion-row>
+					</ion-list>
+				</ion-col> -->
+					<ion-col col-6>
+						<ion-item>
+							<ion-label floating>生日</ion-label>
+							<ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="YYYY-MM-DD" name="birthday" [(ngModel)]="memberInfo.birthday"></ion-datetime>
+						</ion-item>
+					</ion-col>
+					<ion-col col-6>
+						<ion-item>
+							<ion-label floating><span class="color_red marr0_4">*</span>手机号</ion-label>
+							<ion-input type="text" name="phoneNo" [(ngModel)]="memberInfo.phoneNo"></ion-input>
+						</ion-item>
+					</ion-col>
+					<ion-col col-6>
+						<ion-item>
+							<ion-label floating>注册时间</ion-label>
+							<ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="YYYY-MM-DD" name="joinDate" [(ngModel)]="memberInfo.joinDate"></ion-datetime>
+						</ion-item>
+					</ion-col>
+					<ion-col col-6>
+						<ion-item>
+							<ion-label floating>卡号</ion-label>
+							<ion-input type="text" name="cardNo" [(ngModel)]="memberInfo.cardNo"></ion-input>
+						</ion-item>
+					</ion-col>
+				</ion-row>
+			</ion-card>
+			<ion-card>
+				<ion-row class="pb1">
+					<ion-col col-6>
+						<ion-item>
+							<ion-label floating><span class="color_red marr0_4">*</span>QQ</ion-label>
+							<ion-input type="text" name="qq" [(ngModel)]="memberInfo.qq"></ion-input>
+						</ion-item>
+					</ion-col>
+					<ion-col col-6>
+						<ion-item>
+							<ion-label floating>微信</ion-label>
+							<ion-input type="text" name="wechat" [(ngModel)]="memberInfo.wechat"></ion-input>
+						</ion-item>
+					</ion-col>
+					<ion-col col-6>
+						<ion-item>
+							<ion-label floating>婚否</ion-label>
+							<ion-input type="text" name="marriage" [(ngModel)]="memberInfo.marriage"></ion-input>
+						</ion-item>
+					</ion-col>
+					<ion-col col-6>
+						<ion-item>
+							<ion-label floating>体重</ion-label>
+							<ion-input type="text" name="weight" [(ngModel)]="memberInfo.weight"></ion-input>
+						</ion-item>
+					</ion-col>
+					<ion-col col-6>
+						<ion-item>
+							<ion-label floating><span class="color_red marr0_4">*</span>身高</ion-label>
+							<ion-input type="text" name="height" [(ngModel)]="memberInfo.height"></ion-input>
+						</ion-item>
+					</ion-col>
+					<ion-col col-6>
+						<ion-item>
+							<ion-label floating>爱好</ion-label>
+							<ion-input type="text" name="hobby" [(ngModel)]="memberInfo.hobby"></ion-input>
+						</ion-item>
+					</ion-col>
+					<ion-col col-6>
+						<ion-item>
+							<ion-label floating>所属行业</ion-label>
+							<ion-input type="text" name="industry" [(ngModel)]="memberInfo.industry"></ion-input>
+						</ion-item>
+					</ion-col>
+					<ion-col col-6>
+						<ion-item>
+							<ion-label floating>职业</ion-label>
+							<ion-input type="text" name="profession" [(ngModel)]="memberInfo.profession"></ion-input>
+						</ion-item>
+					</ion-col>
+					<ion-col col-6 class="pb0">
+						<ion-item>
+							<ion-label floating>过敏史</ion-label>
+							<ion-input type="text" name="allergy" [(ngModel)]="memberInfo.allergy"></ion-input>
+						</ion-item>
+					</ion-col>
+					<ion-col col-6 class="pb0">
+						<ion-item>
+							<ion-label floating>病例史</ion-label>
+							<ion-input type="text" name="medicalHis" [(ngModel)]="memberInfo.medicalHis"></ion-input>
+						</ion-item>
+					</ion-col>
+					<ion-col col-12 class="pl1 pt0" *ngIf="addressList.length>0">
+						<ion-grid class="p_0 bor2-b" *ngFor="let list of addressList;let idx of index">
+							<ion-row>
+								<ion-col col-3 class="pr0 bor2-r vetically-center" (click)="delAddress(idx)">
+									<ion-label class="vetically-center">
+										<ion-icon name="add-circle"></ion-icon>新增地址一</ion-label>
+								</ion-col>
+								<ion-col text-left class="pl0">
+									<ion-item>
+										<ion-label floating>省份</ion-label>
+										<ion-input type="text"></ion-input>
+									</ion-item>
+									<ion-item>
+										<ion-label floating>详细地址</ion-label>
+										<ion-input type="text"></ion-input>
+									</ion-item>
+									<ion-item class="no-item-bor">
+										<ion-label floating>到店距离</ion-label>
+										<ion-input type="text"></ion-input>
+									</ion-item>
+								</ion-col>
+							</ion-row>
+						</ion-grid>
+					</ion-col>
+					<ion-col col-12 class="pl1" (click)="addAddress()">
+						<ion-grid class="pl0 bor2-b">
+							<ion-row>
+								<ion-col col-12 class="pr0 vetically-center">
+									<ion-label class="vetically-center">
+										<ion-icon name="add-circle"></ion-icon>新增地址</ion-label>
+								</ion-col>
+							</ion-row>
+						</ion-grid>
+					</ion-col>
+					<ion-col col-12 class="pb0">
+						<ion-item>
+							<ion-label floating>备注</ion-label>
+							<ion-input type="text" name="remark" [(ngModel)]="memberInfo.remark"></ion-input>
+						</ion-item>
+					</ion-col>
+				</ion-row>
+			</ion-card>
+			<ion-card class="marb-1">
+				<ion-row class="pb1">
+					<ion-col col-6>
+						<ion-item>
+							<ion-label floating>到店途径</ion-label>
+							<ion-select name="channel" [(ngModel)]="memberInfo.channel">
+								<ion-option>朋友介绍</ion-option>
+								<ion-option>会员介绍</ion-option>
+								<ion-option>路过</ion-option>
+								<ion-option>杂志</ion-option>
+								<ion-option>广告</ion-option>
+								<ion-option>其他</ion-option>
+							</ion-select>
+						</ion-item>
+					</ion-col>
+					<ion-col col-6>
+						<ion-item>
+							<ion-label floating>介绍人</ion-label>
+							<ion-input type="text"></ion-input>
+						</ion-item>
+					</ion-col>
+					<ion-col col-6>
+						<ion-item>
+							<ion-label floating>跟进人</ion-label>
+							<ion-input type="text"></ion-input>
+						</ion-item>
+					</ion-col>
+					<ion-col col-6>
+						<ion-item>
+							<ion-label floating>护理状况</ion-label>
+							<ion-select name="nurse" [(ngModel)]="memberInfo.nurse">
+								<ion-option>从未</ion-option>
+								<ion-option>偶尔</ion-option>
+								<ion-option>经常</ion-option>
+							</ion-select>
+						</ion-item>
+					</ion-col>
+					<ion-col col-6>
+						<ion-item>
+							<ion-label floating>最后护理日</ion-label>
+							<ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="YYYY-MM-DD" name="lastNurseDate" [(ngModel)]="memberInfo.lastNurseDate"></ion-datetime>
+						</ion-item>
+					</ion-col>
+					<ion-col col-6>
+						<ion-item>
+							<ion-label floating>皮肤性质</ion-label>
+							<ion-select multiple="true" name="skin" [(ngModel)]="memberInfo.skin">
+								<ion-option>黑眼圈</ion-option>
+								<ion-option>眼袋</ion-option>
+								<ion-option>鱼尾纹</ion-option>
+								<ion-option>脂肪粒</ion-option>
+								<ion-option>松弛</ion-option>
+								<ion-option>色斑</ion-option>
+								<ion-option>粉刺</ion-option>
+								<ion-option>干性</ion-option>
+								<ion-option>油性</ion-option>
+								<ion-option>敏感性</ion-option>
+								<ion-option>黑头</ion-option>
+								<ion-option>脱皮</ion-option>
+								<ion-option>油腻</ion-option>
+								<ion-option>毛孔粗大</ion-option>
+								<ion-option>红血丝</ion-option>
+							</ion-select>
+						</ion-item>
+					</ion-col>
+				</ion-row>
+			</ion-card>
+		</ion-grid>
+		</form>
+</ion-content>

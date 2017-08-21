@@ -4,6 +4,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { DatePickerModule } from 'ng2-datepicker';
 import { MyApp } from './app.component';
+import { HttpModule } from '@angular/http';
 // import {DndModule} from 'ng2-dnd';
 import { GridsterModule } from 'angular-gridster2';
 // import { MyDatePickerModule } from 'angular2-datepicker/src/my-date-picker/my-date-picker.module';
@@ -15,11 +16,15 @@ import { MemberSdcPage } from '../pages/member/member-sdc/member-sdc';
 import { MemberCbcPage } from '../pages/member/member-cbc/member-cbc';
 import { MemberEditPage } from '../pages/member/member-edit/member-edit';
 import { MemberInfoPage } from '../pages/member/member-info/member-info';
+import { MemberAddPage } from '../pages/member/member-add/member-add';
 import { LoginPage } from '../pages/member/login/login';
 
 
 import { TabsPage } from '../pages/tabs/tabs';
 
+import { CommonService } from '../providers/common';
+import { MemberService } from '../providers/member';
+import { LoginService } from '../providers/login';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -56,6 +61,7 @@ import { TestGridster } from '../pages/booking/test/test.component';
     MemberCbcPage,
     MemberEditPage,
     MemberInfoPage,
+    MemberAddPage,
     LoginPage,
 
     BookingPage,
@@ -72,6 +78,7 @@ import { TestGridster } from '../pages/booking/test/test.component';
     TabsPage
   ],
   imports: [
+    HttpModule,
     BrowserModule,
     DatePickerModule,
     GridsterModule,
@@ -100,6 +107,7 @@ import { TestGridster } from '../pages/booking/test/test.component';
     MemberCbcPage,
     MemberEditPage,
     MemberInfoPage,
+    MemberAddPage,
     LoginPage,
 
     BookingPage,
@@ -118,6 +126,9 @@ import { TestGridster } from '../pages/booking/test/test.component';
   providers: [
     StatusBar,
     SplashScreen,
+    CommonService,
+    MemberService,
+    LoginService,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ],
 })

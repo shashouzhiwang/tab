@@ -20,5 +20,11 @@ page-member-info{
 	  .fs_0.8{
 	    font-size: 0.8rem !important;
 	  }
+		ion-scroll{
+			.scroll-content{
+				margin-left: 0;
+				width: 100%;
+			}
+		}
 
 }

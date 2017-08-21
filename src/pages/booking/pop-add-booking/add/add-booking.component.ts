@@ -18,15 +18,24 @@ export class AddBooking {
 	projectName:string = '';
 	technicians : string ;
 	bedName : string;
+	x:number;
+	y:number;
 	constructor(
 		public modalCtrl: ModalController,
-		public viewCtrl: ViewController
+		public viewCtrl: ViewController,
+		private navParams: NavParams
 		){
-
+		console.log(navParams.data);
+		this.x = navParams.data.x;
+		this.y = navParams.data.y;
 	}
  
 	save(){
-		this.viewCtrl.dismiss();
+		let data = {
+	      x:this.x,
+	      y:this.y,
+	    }
+	    this.viewCtrl.dismiss(data);
 	}
 
 	cancle(){

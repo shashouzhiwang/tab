@@ -5,6 +5,8 @@ $calendar-unit-width:8rem;
 		position:absolute;
 		left:$calendar-unit-width/2;
 		top:0;
+		    z-index: 22;
+    		background: white;
 		.calendar-title{
 			padding:1rem 0;
 			font-size: 1rem;
@@ -26,6 +28,7 @@ $calendar-unit-width:8rem;
 	.calendar-col-time{
 		width: $calendar-unit-width/2;
 		margin-top: 0;
+		top: $calendar-unit-height;
     margin-left: 0;
     background: white;
     z-index: 22;
@@ -35,7 +38,7 @@ $calendar-unit-width:8rem;
 			right: .5rem;
 			>div{
 				font-size: .8rem;
-				top:.5rem;
+				top:-.5rem;
 				height: $calendar-unit-height;
 			}
 		}

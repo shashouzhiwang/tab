@@ -1,10 +1,15 @@
-page-member-edit{
-		.frame-row{
-	    height: 100%;
-	    >.col{
-	      padding: 0;
-	    }
-	  }
+page-member-add{
+		ion-header{
+			padding-left: 0 ;
+		}
+		 .content-ios{
+			 width: 100% !important;
+			 left:0 !important;
+		 }
+		.scroll-content, .fixed-content{
+			margin-left: 0;
+			width: 100%;
+		}
 	  .content-row{
 	    margin-left: 0;
 	    margin-right: 0;
@@ -33,14 +38,13 @@ page-member-edit{
 		}
 		.col{
 			padding-bottom: 0;
-			padding-top: 0;
 		}
 		.text-input{
 			font-size: 1rem;
 		}
 		ion-label{
-			color: #999999;
-			font-size: 1rem;
+			color: #999999 !important;
+			font-size: 1rem !important;
 		}
 		.marr0_4{
 			margin-right: 0.4rem;

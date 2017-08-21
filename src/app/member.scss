@@ -12,19 +12,20 @@ $color-g-blue: #2FB8E9;
 .color_blue{color:$color-g-blue;}
 .color_green{color:#95E8A9;}
 .color_black_less{color:#4A4A4A}
+.color_red{color:#FF0000;}
 
 .fw{font-weight: bold;}
 
 .fs-1 {
 	font-size: 1rem;
 }
-.fs-1.2 {
+.fs1_2 {
 	font-size: 1.2rem;
 }
-.fs-0.85{
+.fs0_85{
 	font-size: 0.85rem;
 }
-.fs-1.05{
+.fs1_05{
 	font-size: 1.05rem;
 }
 
@@ -51,27 +52,49 @@ $color-g-blue: #2FB8E9;
 .bor{
 	border:1px solid #C8C7CC;
 }
+.bor2-b{
+	border-bottom: 1px solid #EFEFF4;
+}
+.bor2-r{
+	border-right: 1px solid #EFEFF4;
+}
+
 /*---背景颜色---*/
 .bgc-gray{background-color:#F6F6F6;}
 .bgc-hovergray{background-color:#F6F6F6;}
 
 
 //margin
-.mart-1 {
-	margin-top: 1rem;
-}
+.mart-1 {margin-top: 1rem;}
+.marb-1 {margin-bottom: 1rem;}
+.mart0{margin-top: 0}
+.martb0{margin-top: 0;margin-bottom: 0}
 
 //padding
 .p_0{padding:0px;}
 .pt0{padding-top: 0}
 .pb0{padding-bottom: 0}
+.pl0{padding-left: 0}
 .pl2{padding-left: 2rem}
-
+.pl1{padding-left: 1rem}
+.pb1{padding-bottom: 1rem}
+.pb3{padding-bottom: 3rem}
+.pr0{padding-right: 0rem;}
 
 //no
 .no-bgc{background-color: transparent !important;}
+.no-item-bor{
+	.item-inner{
+			border:0 !important;
+	}
+}
 
 
+//垂直居中
+.vetically-center{
+	 display: flex;
+	 align-items: center;
+}
 .checkbox-ios .checkbox-checked {
 	border-color: $color-g-blue;
 	background: $color-g-blue;
@@ -152,4 +175,37 @@ $color-g-blue: #2FB8E9;
 		top: 35%;
 		font-size: 1.05rem;
 		color: #999999;
+}
+
+
+//sex-radio
+.sex-radio{
+	.radio{
+		width: 22px;
+		height: 22px;
+		border-radius: 50%;
+		border: 1px solid #EFEFF4
+	}
+	.radio-ios .radio-icon{
+		width: 24px;
+		height: 24px;
+		border-radius: 50%;
+	}
+	.radio-checked{
+		color: white;
+		background-color: $color-g-blue;
+	}
+	.radio-ios .radio-checked .radio-inner{
+		left: 9px;
+		border-color: white;
+	}
+	.item-radio-checked.item-ios ion-label{
+		color:black;
+	}
+	.item-block{
+		min-height:0;
+	}
+	.item-ios .radio-ios{
+		margin-left: 0;
+	}
 }

@@ -10,7 +10,7 @@
         <ion-title text-center *ngIf="!isSearch">
           <span padding class="ib" (click)="gologin()">会员</span>
         </ion-title>
-        <ion-buttons end *ngIf="!isSearch">
+        <ion-buttons end *ngIf="!isSearch" (click)="openModal()">
           <button ion-button icon-only clear class="f1">
                     <ion-icon ios="ios-add" md="md-add" class="color_blue fw"></ion-icon>
               </button>

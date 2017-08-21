@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import {LoginPage} from "./login/login";
+import { NavController, ModalController} from 'ionic-angular';
+import { LoginPage } from "./login/login";
+import { MemberAddPage } from "./member-add/member-add";
 
 @Component({
   selector: 'page-member',
@@ -11,7 +12,7 @@ export class MemberPage {
   memberList: any = [];
   id:number;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController,) {
     for(let i=1;i<15;i++){
       let list={
         id:i,
@@ -37,5 +38,10 @@ export class MemberPage {
 
   getMemberDetail(id:number){
     this.id=id;
+  }
+
+  openModal(){
+    let modal = this.modalCtrl.create(MemberAddPage);
+    modal.present();
   }
 }
