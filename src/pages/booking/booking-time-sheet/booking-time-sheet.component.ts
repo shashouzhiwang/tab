@@ -72,62 +72,90 @@ export class BookingTimeSheetComponent {
     let borderLeft = $grid.css('left');
     let borderTop = $grid.css('top');
     let $gridContent = $(".calendar-col-content");
+    //
+    // $calendarGrid
+    //   .on("touchstart", function(e) {
+    //     startX = e.originalEvent.changedTouches[0].pageX;
+    //     startY = e.originalEvent.changedTouches[0].pageY;
+    //     startLeft = $grid.css('left');
+    //     startTop = $grid.css('top');
+    //     startLeftTitle = $calendarTitle.css('left');
+    //     $grid.addClass('notransition');
+    //   })
+    //   .on("touchmove", function(e) {
+    //     // console.log(e.originalEvent,'move');
+    //     e.preventDefault();
+    //     let moveEndX = e.originalEvent.changedTouches[0].pageX;
+    //     let moveEndY = e.originalEvent.changedTouches[0].pageY;
+    //     let  X = moveEndX - startX;
+    //     let  Y = moveEndY - startY;
+    //     if ( Math.abs(X) > Math.abs(Y) && X > 0 ) {
+    //       if(parseFloat(startLeftTitle)+Math.abs(X) > parseFloat(borderLeft)){
+    //         $grid.css('left',parseFloat(borderLeft));
+    //         $calendarTitle.css('left',parseFloat(borderLeft));
+    //       }else{
+    //         $grid.css('left',parseFloat(startLeft)+Math.abs(X));
+    //         $calendarTitle.css('left',parseFloat(startLeftTitle)+Math.abs(X));
+    //       }
+    //     }
+    //     else if ( Math.abs(X) > Math.abs(Y) && X < 0 ) {
+    //       // console.log("right 2 left");
+    //       console.log(startLeft);
+    //       $grid.css('left',parseFloat(startLeft)-Math.abs(X));
+    //       $calendarTitle.css('left',parseFloat(startLeftTitle)-Math.abs(X));
+    //
+    //     }else if ( Y > 0) {
+    //       if(parseFloat(startTop)+Math.abs(Y)>parseFloat(borderTop)){
+    //         $grid.css('top',parseFloat(borderTop));
+    //         $calendarTime.css('top',parseFloat(borderTop));
+    //       }else{
+    //         $grid.css('top',parseFloat(startTop)+Math.abs(Y));
+    //         $calendarTime.css('top',parseFloat(startTop)+Math.abs(Y));
+    //       }
+    //
+    //     }
+    //     else if ( Y < 0 ) {
+    //       $grid.css('top',parseFloat(startTop)-Math.abs(Y));
+    //       $calendarTime.css('top',parseFloat(startTop)-Math.abs(Y));
+    //     }
+    //   })
+    //   .on("touchend",function(e){
+    //     $grid.removeClass('notransition');
+    //   })
 
-    $calendarGrid
-      .on("touchstart", function(e) {
-        startX = e.originalEvent.changedTouches[0].pageX;
-        startY = e.originalEvent.changedTouches[0].pageY;
-        startLeft = $grid.css('left');
-        startTop = $grid.css('top');
-        startLeftTitle = $calendarTitle.css('left');
-        $grid.addClass('notransition');
-      })
-      .on("touchmove", function(e) {
-        // console.log(e.originalEvent,'move');
-        e.preventDefault();
-        let moveEndX = e.originalEvent.changedTouches[0].pageX;
-        let moveEndY = e.originalEvent.changedTouches[0].pageY;
-        let  X = moveEndX - startX;
-        let  Y = moveEndY - startY;
-        if ( Math.abs(X) > Math.abs(Y) && X > 0 ) {
-          if(parseFloat(startLeftTitle)+Math.abs(X) > parseFloat(borderLeft)){
-            $grid.css('left',parseFloat(borderLeft));
-            $calendarTitle.css('left',parseFloat(borderLeft));
-          }else{
-            $grid.css('left',parseFloat(startLeft)+Math.abs(X));
-            $calendarTitle.css('left',parseFloat(startLeftTitle)+Math.abs(X));            
-          }
-        }
-        else if ( Math.abs(X) > Math.abs(Y) && X < 0 ) {
-          // console.log("right 2 left");
-          console.log(startLeft);
-          $grid.css('left',parseFloat(startLeft)-Math.abs(X));
-          $calendarTitle.css('left',parseFloat(startLeftTitle)-Math.abs(X));
 
-        }else if ( Y > 0) {
-          if(parseFloat(startTop)+Math.abs(Y)>parseFloat(borderTop)){
-            $grid.css('top',parseFloat(borderTop));
-            $calendarTime.css('top',parseFloat(borderTop));
-          }else{
-            $grid.css('top',parseFloat(startTop)+Math.abs(Y));
-            $calendarTime.css('top',parseFloat(startTop)+Math.abs(Y));
-          }
-          
-        }
-        else if ( Y < 0 ) {
-          $grid.css('top',parseFloat(startTop)-Math.abs(Y));
-          $calendarTime.css('top',parseFloat(startTop)-Math.abs(Y));
-        }
-      })
-      .on("touchend",function(e){
-        $grid.removeClass('notransition');
-      })
 
   }
 
   emptyCellClick(event, item) {
     console.info('empty cell click', event, item);
     this.dashboard.push(item);
+  }
+  // gridLeft:any = '0px';
+  gridLeft:number = 64;
+  gridTop:number = 64;
+  gridTitleLeft = 16*18;
+
+  startX = 0;
+  startY = 0;
+  panEvent(e){
+    console.log(e.deltaY,e.deltaX);
+    if(!e.isFinal){
+      this.gridTitleLeft += e.deltaX - this.startX + 16*18;
+      if((this.gridLeft += e.deltaX - this.startX)>64){
+        this.gridLeft = 64;
+        this.gridTitleLeft = 16*18;
+      }
+
+      // if((this.gridTop += e.deltaY - this.startY) <64)
+      this.startX = e.deltaX;
+    }else{
+      this.startX = 0;
+      // this.startY = 0;
+    }
+
+
+
   }
 
   constructor(
@@ -269,9 +297,9 @@ export class BookingTimeSheetComponent {
     ];
 
   generatorTime(){
-    for(var i:any=0; i<=10; i ++){
+    for(var i:any=0; i<=16; i ++){
       var tem:any = '';
-      if(i<10){
+      if(i<16){
         tem = '0'+i+':00';
       }else{
         tem = i+':00';
@@ -300,7 +328,7 @@ export class BookingTimeSheetComponent {
       resizeEnabled: true,
       bgcolor:BookingTimeSheetComponent.colorTimeSheet[0]["bgColor"],
       color:BookingTimeSheetComponent.colorTimeSheet[0]['color']
-    });     
+    });
    });
     modal.present();
 

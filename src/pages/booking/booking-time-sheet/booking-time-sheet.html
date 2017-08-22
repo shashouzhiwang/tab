@@ -1,13 +1,15 @@
 <div class="dk-bookingContent h100">
-  <div class="control-btn ub ub-pc" (tab)="collapse($event);">
+  <div class="control-btn ub ub-pc" tappable (click)="collapse($event);">
     <i class="fc fc-left ub ub-ac"></i>
   </div>
   <div class="calendar ub" >
-    
-    <div class="calendar-row-title ub">
-      <div class="calendar-title ub ub-ac ub-ver" *ngFor="let bedList of bed"> 
-        <div class="ub">{{bedList.name}}</div>
-        <div class="ub">{{bedList.number}}</div>
+
+    <div class="calendar-row-title ub" style="width: 100%">
+      <div class="ub" [ngStyle]="{'left': gridLeft -5 +'px'}" style="position: relative;">
+        <div class="calendar-title ub ub-ac ub-ver"  *ngFor="let bedList of bed">
+          <div class="ub">{{bedList.name}}</div>
+          <div class="ub">{{bedList.number}}</div>
+        </div>
       </div>
     </div>
     <div class="calendar-col-time ub ub-ver">
@@ -15,8 +17,8 @@
         <div class="ub ub-pe ub-as">{{item.name}}</div>
       </div>
     </div>
-      <gridster [options]="options" id="gridster" style="background-color: rgba(255,255,255,0.5);">
-          <div class="calendar-col-grid ub">
+      <gridster [options]="options" id="gridster" (pan)="panEvent($event);" [ngStyle]="{'left': gridLeft+'px'}" style="background-color: rgba(255,255,255,0.5);">
+          <div class="calendar-col-grid ub"  >
             <div class="calendar-col first-col ub ub-ver"  *ngFor="let bedList of bed; let col = index" >
             <div class="calendar-col-content">
               <div class="calendar-unit" *ngFor="let item of timePeriod; let row = index"  >
@@ -24,7 +26,7 @@
                 <div (tab)="openModel($event,col,row*2+1);"></div>
               </div>
             </div>
-          </div>  
+          </div>
         </div>
         <gridster-item [item]="item" *ngFor="let item of dashboard" >
           <div class="gridster-cell-warp" [ngStyle]="{'background-color':item.bgcolor,'color':item.color}">

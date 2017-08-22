@@ -86,7 +86,7 @@ import { TestGridster } from '../pages/booking/test/test.component';
     GridsterModule,
     BrowserAnimationsModule,
     // MdIconModule, MdButtonModule, MdSelectModule, MdInputModule, MdTooltipModule, MdCheckboxModule, MdSidenavModule,
-    // IonicModule.forRoot(MyApp,{
+    IonicModule.forRoot(MyApp,{
     //   backButtonIcon:'md-arrow-back',
     //   backButtonText:'',
     //   iconMode:'ios',
@@ -95,7 +95,7 @@ import { TestGridster } from '../pages/booking/test/test.component';
     //   tabsPlacement:'bottom',
     //   pageTransition:'ios-transition',
     //   swipeBackEnabled:true
-    // }),
+    }),
     LocalStorageModule.withConfig({
         prefix: 'dkdoo',
         storageType: 'localStorage'

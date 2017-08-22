@@ -1,9 +1,10 @@
 $calendar-unit-height:4rem;
 $calendar-unit-width:8rem;
 .calendar{
+  overflow: scroll;
 	.calendar-row-title{
-		position:absolute;
-		left:$calendar-unit-width/2;
+		position:fixed;
+		left:$calendar-unit-width/2+10rem;
 		top:0;
 		    z-index: 22;
     		background: white;
