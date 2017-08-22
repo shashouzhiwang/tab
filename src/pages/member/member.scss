@@ -9,7 +9,12 @@ page-member {
     margin-left: 0;
     margin-right: 0;
   }
-
+  ion-scroll{
+    .scroll-content{
+      margin-left: 0;
+      width: 100%;
+    }
+  }
   .search-list{
     padding-top: 0.8rem;
     .label-md{
@@ -31,6 +36,9 @@ page-member {
       margin-right: 1rem;
     }
   }
+  .list-title.active{
+    background-color:#F6F6F6;
+  }
   .list-ios > .item-block:first-child{
     border-top: none;
   }
@@ -41,9 +49,6 @@ page-member {
   .member-list{
     padding-top: 0.5rem;
     margin-top: 0;
-    .item:hover{
-      background-color:#F6F6F6;
-    }
     .row{
       margin-left: 0;
       margin-right: 0;

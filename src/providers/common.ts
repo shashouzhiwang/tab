@@ -3,6 +3,7 @@ import { ToastController } from 'ionic-angular';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/toPromise';
+import { LocalStorageService } from 'angular-2-local-storage';
 
 
 
@@ -19,27 +20,35 @@ export class CommonService {
     return Promise.reject(error.message || error);
   }
 
-  constructor(private http: Http, private toastCtrl: ToastController) {
+  constructor(private http: Http, private toastCtrl: ToastController, public storage: LocalStorageService) {
 
   }
 
   //给请求头加上token
   buildTokenHeader() {
+    let token = this.getToken();
     return {
       name: 'Authorization',
-      value: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1OTk2NmJkM2U0YjA4NzVjMTMxMmViZGUiLCJpYXQiOjE1MDMzMTUwNDR9.SnsWEmfn6B4r_tr7scg1EBE7XAPs8G7X98k-PZAQWXw'
+      value: 'Bearer ' + token,
     };
+  }
+
+  //给请求头加上token
+  buildShopHeader() {
+    let id: any = this.getShopId();
+    return id;
   }
 
 
   sendRequest(requestUrl: string, params: any): Promise<any> {
-    return this.getNewToken().then((res:any) => {
+    return this.getNewToken().then((res: any) => {
       params.token = JSON.parse(res._body).token;
       let requestBody = JSON.stringify(params);
 
       let tokenHeader = this.buildTokenHeader();
+      let shopHeader = this.buildShopHeader();
       this.headers.set(tokenHeader.name, tokenHeader.value);
-
+      this.headers.append('shop', shopHeader);
       let requestOptions = new RequestOptions({ headers: this.headers });
       return this.http.post(this.apiUrl + requestUrl, requestBody, requestOptions)
         .toPromise()
@@ -82,4 +91,32 @@ export class CommonService {
       .catch(this.handleError);
   }
 
+  setToken(token: string) {
+    this.storage.set('token', token);
+  }
+
+  //获取token
+  getToken() {
+    return this.storage.get('token');
+  }
+
+  //获取ShopId
+  getShopId() {
+    return this.storage.get('shop');
+  }
+
+  //获取当天日期  返回格式2017-01-01
+  getTodayDate() {
+    let date = new Date();
+    let y=date.getFullYear();
+    let m=date.getMonth()+1;
+    let d=date.getDate();
+    return  y+"-"+(m<10?"0":"")+m+"-"+(d<10?"0":"")+d;
+  }
+
+  //日期格式2017-01-01 00:00:00 转化为时间戳
+  turnDate(date:string){
+    let d=new Date(date);
+    return d.getTime();
+  }
 }

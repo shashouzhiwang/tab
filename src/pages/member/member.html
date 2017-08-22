@@ -31,9 +31,9 @@
 </ion-header>
 <ion-content>
   <ion-row class="h100">
-    <ion-col col-7 class="bor-r">
+    <ion-col col-7 class="bor-r h100">
       <ion-row class="content-row h100">
-        <ion-col col-3>
+        <ion-col col-4>
           <ion-list no-lines class="search-list">
             <ion-item text-left>最近搜索的会员</ion-item>
             <ion-item text-left>最近新增的会员</ion-item>
@@ -42,22 +42,24 @@
             <ion-item text-left>搜索条件二</ion-item>
           </ion-list>
         </ion-col>
-        <ion-col col-9 class="h100">
-          <ion-scroll scrollY="true" class="h100">
+        <ion-col col-8 class="h100">
+          <ion-scroll scrollY="true" class="w100 h100">
             <ion-list class="member-list">
-              <ion-item *ngFor="let list of memberList" class="list-title" (click)="getMemberDetail(list.id)">
+              <ion-item *ngFor="let list of memberList" class="list-title" [ngClass]="{'active':id==list.id}" (click)="getMemberDetail(list.id)">
                 <ion-row>
                   <span>
                   {{list.name}}
                 </span>
                   <span>
-                  {{list.phone}}
+                  {{list.phoneNo}}
                 </span>
                   <span>
-                  {{list.role}}
+                  vip
                 </span>
                 </ion-row>
-                <ion-row text-left class="time">上次消费时间：{{list.consume_time}}</ion-row>
+                <ion-row text-left class="time">
+                  上次消费时间：{{list.lastNurseDate==0?'':list.lastNurseDate | date:"y-MM-dd"}}
+                </ion-row>
               </ion-item>
             </ion-list>
           </ion-scroll>
@@ -65,7 +67,10 @@
       </ion-row>
     </ion-col>
     <ion-col col-5>
-      <page-member-detail [id]="id" [isJump]="false"></page-member-detail>
+      <page-member-detail *ngIf="memberInfo"  [memberInfo]="memberInfo" [isJump]="false"></page-member-detail>
+      <div *ngIf="!memberInfo" class="right-content">
+        <div class="no-content-wrapper" text-center>点击左边会员查看会员信息</div>
+      </div>
     </ion-col>
   </ion-row>
 </ion-content>

@@ -5,6 +5,7 @@ import { LoginService } from '../../../providers/login';
 import { TabsPage } from '../../tabs/tabs';
 
 
+
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html'
@@ -20,9 +21,11 @@ export class LoginPage {
   }
 
   login(form:any){
-    // console.log(form,2222222222);
-    // this.loginSer.login(form);
-	  this.navCtrl.push(TabsPage); 
+    this.loginSer.login(form).then(res=>{
+      if(res.success){
+        this.navCtrl.push(TabsPage);
+      }
+    });
   }
 
 }

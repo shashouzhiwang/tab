@@ -6,18 +6,19 @@ import { NavController, NavParams} from 'ionic-angular';
   templateUrl: 'booking-recording.html',
 })
 
-export class BookingRecording{
-memberList: any = [];
-isSearch:boolean=false;
-items : string[];
-id:number;
+export class BookingRecording {
+  memberList: any = [];
+  isSearch: boolean = false;
+  items: string[];
+  id: number;
 
-searchAnimate : {};
 
-	constructor(public navCtrl : NavController,public navParams : NavParams){
-    for(let i=1;i<15;i++){
-      let list={
-        id:i,
+  searchAnimate: {};
+
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    for (let i = 1; i < 15; i++) {
+      let list = {
+        id: i,
         name: '黄女士',
         phone: 15800274113,
         role: 'vip',
@@ -27,40 +28,40 @@ searchAnimate : {};
     }
   }
 
-	cancelSearch(){
-		this.isSearch=false;
-	}
-	canSearch(){
-		this.isSearch=true;
-	}
-
-	goback(){
-		this.navCtrl.pop();
-	}
-	initializeItems() {
-	    this.items = [
-	      'Amsterdam',
-	      'Bogota',
-	    ];
-	}
-
-  getDetail(id:number){
-    this.id=id;
+  cancelSearch() {
+    this.isSearch = false;
+  }
+  canSearch() {
+    this.isSearch = true;
   }
 
-	getItems(ev:any){
-		this.initializeItems();
+  goback() {
+    this.navCtrl.pop();
+  }
+  initializeItems() {
+    this.items = [
+      'Amsterdam',
+      'Bogota',
+    ];
+  }
 
-		let val = ev.target.value;
+  getDetail(id: number) {
+    this.id = id;
+  }
 
-	    if (val && val.trim() != '') {
-	      this.items = this.items.filter((item) => {
-	        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
-	      })
-	    }
-	}
+  getItems(ev: any) {
+    this.initializeItems();
 
-	showRecord(ev:any){
-		ev.target;
-	}
+    let val = ev.target.value;
+
+    if (val && val.trim() != '') {
+      this.items = this.items.filter((item) => {
+        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
+  }
+
+  showRecord(ev: any) {
+    ev.target;
+  }
 }

@@ -1,34 +1,39 @@
-
-<div class="right-content" [hidden]="!_id">
+<div class="right-content">
   <ion-list class="member-info" no-lines>
     <ion-item>
       <ion-avatar item-start>
         <img style="width:4rem;height:4rem" src="http://img0.imgtn.bdimg.com/it/u=4128355576,3453965016&fm=214&gp=0.jpg">
       </ion-avatar>
-      <h2 text-left>Finn</h2>
-      <p text-left>13265922486</p>
+      <h2 text-left>{{memberInfo.name}}</h2>
+      <p text-left>{{memberInfo.phoneNo}}</p>
     </ion-item>
   </ion-list>
   <ion-item no-lines class="member-detail color_black_less">
     <ion-row>
       <ion-col>
-        卡号：39389idhg
+        卡号：{{memberInfo.cardNo ? memberInfo.cardNo:'暂无'}}
       </ion-col>
       <ion-col>
-        跟进人：
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        会员级别：
-      </ion-col>
-      <ion-col>
-        介绍人：
+        跟进人：暂无
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        上次消费时间：
+        会员级别：{{memberInfo.level.name ? memberInfo.level.name:'暂无'}}
+      </ion-col>
+      <ion-col *ngIf="memberInfo.introducer">
+        介绍人：{{memberInfo.introducer.name}}
+      </ion-col>
+      <ion-col *ngIf="!memberInfo.introducer">
+        介绍人：暂无
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col *ngIf="memberInfo.lastNurseDate!=0">
+        上次消费时间：{{memberInfo.lastNurseDate | date:"y-MM-dd"}}
+      </ion-col>
+      <ion-col *ngIf="memberInfo.lastNurseDate==0">
+        上次消费时间：暂未消费
       </ion-col>
       <ion-col>
       </ion-col>
@@ -39,19 +44,19 @@
       <ion-col class="bor-r-de">
         <div text-left class="dp-ib">
           <p>累计消费次数</p>
-          <p>10</p>
+          <p>{{memberInfo.consumeTimes}}</p>
         </div>
       </ion-col>
       <ion-col class="bor-r-de">
         <div text-left class="dp-ib">
           <p>累计消费额</p>
-          <p>￥9999999.00</p>
+          <p>￥{{memberInfo.consumeAmount}}</p>
         </div>
       </ion-col>
       <ion-col>
         <div text-left class="dp-ib">
-          <p>累计消费额</p>
-          <p>￥9999999.00</p>
+          <p>累计消耗额</p>
+          <p>￥{{memberInfo.consumeAmount}}</p>
         </div>
       </ion-col>
     </ion-row>
@@ -75,7 +80,4 @@
       </ion-label>
     </ion-item>
   </ion-list>
-</div>
-<div *ngIf="!_id" class="right-content">
-  <div class="no-content-wrapper" text-center>点击左边会员查看会员信息</div>
 </div>

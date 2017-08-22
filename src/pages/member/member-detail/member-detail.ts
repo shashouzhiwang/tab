@@ -8,38 +8,35 @@ import {MemberInfoPage} from '../member-info/member-info';
   templateUrl: 'member-detail.html'
 })
 export class MemberDetailPage {
-  _id:number;
 
   @Input() isJump:boolean;
   @Input() type:string;
-  @Input() set id(id:number){
-    this._id=id;
-  }
+  @Input() memberInfo:any;
+  @Input() id:number;
 
   @Output() outType = new EventEmitter<any>();
 
-  get id():number {return this.id};
 
   constructor(public navCtrl: NavController) {
   }
 
   goSdc(){
     if(!this.isJump){
-      this.navCtrl.push(MemberInfoPage,{id:this._id,type:'sdc'});
+      this.navCtrl.push(MemberInfoPage,{memberInfo:this.memberInfo,type:'sdc'});
     }else{
       this.outType.emit('sdc');
     }
   }
   goCdc(){
     if(!this.isJump){
-      this.navCtrl.push(MemberInfoPage,{id:this._id,type:'cbc'});
+      this.navCtrl.push(MemberInfoPage,{memberInfo:this.memberInfo,type:'cbc'});
     }else{
       this.outType.emit('cbc');
     }
   }
   goEdit(){
     if(!this.isJump){
-      this.navCtrl.push(MemberInfoPage,{id:this._id,type:'edit'});
+      this.navCtrl.push(MemberInfoPage,{memberInfo:this.memberInfo,type:'edit'});
     }else{
       this.outType.emit('edit');
     }

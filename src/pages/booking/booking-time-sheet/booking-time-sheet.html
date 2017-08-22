@@ -1,5 +1,5 @@
 <div class="dk-bookingContent h100">
-  <div class="control-btn ub ub-pc" (click)="collapse($event);">
+  <div class="control-btn ub ub-pc" (tab)="collapse($event);">
     <i class="fc fc-left ub ub-ac"></i>
   </div>
   <div class="calendar ub" >
@@ -20,8 +20,8 @@
             <div class="calendar-col first-col ub ub-ver"  *ngFor="let bedList of bed; let col = index" >
             <div class="calendar-col-content">
               <div class="calendar-unit" *ngFor="let item of timePeriod; let row = index"  >
-                <div (click)="openModel($event,col,row*2);"></div>
-                <div (click)="openModel($event,col,row*2+1);"></div>
+                <div (tab)="openModel($event,col,row*2);"></div>
+                <div (tab)="openModel($event,col,row*2+1);"></div>
               </div>
             </div>
           </div>  

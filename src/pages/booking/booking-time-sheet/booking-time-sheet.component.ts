@@ -80,6 +80,7 @@ export class BookingTimeSheetComponent {
         startLeft = $grid.css('left');
         startTop = $grid.css('top');
         startLeftTitle = $calendarTitle.css('left');
+        $grid.addClass('notransition');
       })
       .on("touchmove", function(e) {
         // console.log(e.originalEvent,'move');
@@ -117,6 +118,9 @@ export class BookingTimeSheetComponent {
           $grid.css('top',parseFloat(startTop)-Math.abs(Y));
           $calendarTime.css('top',parseFloat(startTop)-Math.abs(Y));
         }
+      })
+      .on("touchend",function(e){
+        $grid.removeClass('notransition');
       })
 
   }

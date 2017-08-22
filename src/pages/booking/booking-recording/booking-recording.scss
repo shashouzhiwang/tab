@@ -9,7 +9,12 @@ page-booking-recording{
 	    margin-left: 0;
 	    margin-right: 0;
 	  }
-
+		ion-scroll{
+			.scroll-content{
+				margin-left: 0;
+				width: 100%;
+			}
+		}
 	  .search-list{
 	    padding-top: 0.8rem;
 	    .label-md{
@@ -31,6 +36,9 @@ page-booking-recording{
 	      margin-right: 1rem;
 	    }
 	  }
+		.list-title.active{
+			background-color:#F6F6F6;
+		}
 	  .list-ios > .item-block:first-child{
 	    border-top: none;
 	  }
@@ -44,9 +52,6 @@ page-booking-recording{
 	    .row{
 	      margin-left: 0;
 	      margin-right: 0;
-	    }
-			.item:hover{
-	      background-color:#F6F6F6;
 	    }
 	    .item-block{
 	      min-height: 3.4rem;

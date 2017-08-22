@@ -28,9 +28,9 @@
 </ion-header>
 <ion-content>
 	<ion-row class="h100">
-		<ion-col col-7 class="bor-r">
+		<ion-col col-7 class="bor-r h100">
 			<ion-row class="content-row h100">
-				<ion-col col-3>
+				<ion-col col-4>
 					<ion-list no-lines class="search-list">
 						<ion-item text-left>最近搜索的会员</ion-item>
 						<ion-item text-left>最近新增的会员</ion-item>
@@ -39,10 +39,10 @@
 						<ion-item text-left>搜索条件二</ion-item>
 					</ion-list>
 				</ion-col>
-				<ion-col col-9 class="h100">
+				<ion-col col-8 class="h100">
 					<ion-scroll scrollY="true" class="h100">
 						<ion-list class="member-list">
-							<ion-item *ngFor="let list of memberList" class="list-title" (click)="getDetail(list.id)">
+							<ion-item *ngFor="let list of memberList" class="list-title" [ngClass]="{'active':id==list.id}" (click)="getDetail(list.id)">
 								<ion-row>
 									<span>
                   {{list.name}}

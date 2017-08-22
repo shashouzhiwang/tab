@@ -7,9 +7,9 @@
     <ng2-datepicker [options]="options" [(ngModel)]="date"></ng2-datepicker>
     <ion-list radio-group class="p_5 homePageList">
 
-      <ion-item (click)="goBookingRecording()" class="p_0 tabHomeSearchInput">
+      <ion-item (tab)="goBookingRecording()" class="p_0 tabHomeSearchInput">
         <ion-label><ion-icon name="ios-search"></ion-icon></ion-label>
-        <ion-input type="search" placeholder="预约记录" readonly></ion-input>
+        <ion-input type="search" placeholder="预约记录" disabled readonly></ion-input>
       </ion-item>
 
       <ion-item class="p_0">
@@ -35,4 +35,3 @@
 </div>
 
 </ion-content>
-

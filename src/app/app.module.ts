@@ -8,6 +8,8 @@ import { HttpModule } from '@angular/http';
 // import {DndModule} from 'ng2-dnd';
 import { GridsterModule } from 'angular-gridster2';
 // import { MyDatePickerModule } from 'angular2-datepicker/src/my-date-picker/my-date-picker.module';
+import { LocalStorageModule } from 'angular-2-local-storage';
+
 
 import { AboutPage } from '../pages/about/about';
 import { MemberPage } from '../pages/member/member';
@@ -39,16 +41,16 @@ import { SelectProjectComponent } from "../pages/booking/pop-add-booking/select-
 import { SelectMemberComponent } from "../pages/booking/pop-add-booking/select-member/select-member.component"
 import { SelectBedComponent } from "../pages/booking/pop-add-booking/select-bed/select-bed.component"
 //test
-import 'hammerjs';
-import {
-  MdIconModule,
-  MdButtonModule,
-  MdSelectModule,
-  MdSliderModule,
-  MdInputModule,
-  MdTooltipModule,
-  MdCheckboxModule, MdSidenavModule
-} from '@angular/material';
+// import 'hammerjs';
+// import {
+//   MdIconModule,
+//   MdButtonModule,
+//   MdSelectModule,
+//   MdSliderModule,
+//   MdInputModule,
+//   MdTooltipModule,
+//   MdCheckboxModule, MdSidenavModule
+// } from '@angular/material';
 import { TestGridster } from '../pages/booking/test/test.component';
 
 @NgModule({
@@ -83,16 +85,20 @@ import { TestGridster } from '../pages/booking/test/test.component';
     DatePickerModule,
     GridsterModule,
     BrowserAnimationsModule,
-    MdIconModule, MdButtonModule, MdSelectModule, MdInputModule, MdTooltipModule, MdCheckboxModule, MdSidenavModule,
-    IonicModule.forRoot(MyApp,{
-      backButtonIcon:'md-arrow-back',
-      backButtonText:'',
-      iconMode:'ios',
-      modalEnter:'modal-slide-in',
-      modalLeave:'modal-slide-out',
-      tabsPlacement:'bottom',
-      pageTransition:'ios-transition',
-      swipeBackEnabled:true
+    // MdIconModule, MdButtonModule, MdSelectModule, MdInputModule, MdTooltipModule, MdCheckboxModule, MdSidenavModule,
+    // IonicModule.forRoot(MyApp,{
+    //   backButtonIcon:'md-arrow-back',
+    //   backButtonText:'',
+    //   iconMode:'ios',
+    //   modalEnter:'modal-slide-in',
+    //   modalLeave:'modal-slide-out',
+    //   tabsPlacement:'bottom',
+    //   pageTransition:'ios-transition',
+    //   swipeBackEnabled:true
+    // }),
+    LocalStorageModule.withConfig({
+        prefix: 'dkdoo',
+        storageType: 'localStorage'
     }),
     // MyDatePickerModule,
     // DndModule.forRoot()

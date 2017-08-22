@@ -19,10 +19,10 @@
 <ion-content class="tab-home-artboard-page">
   <ion-row class="h100 frame-row">
     <ion-col col-5 class="p_0 bd_rt h100">
-      <page-member-detail [id]="id" [isJump]="true" [type]="type" (outType)="clickCardList($event)"></page-member-detail>
+      <page-member-detail [memberInfo]="memberInfo" [isJump]="true" [type]="type" (outType)="clickCardList($event)"></page-member-detail>
     </ion-col>
 
-    <ion-col col-7 class="p_0 bgc-gray h100">
+    <ion-col col-7 class="p_0 bgc-gray h100" style="padding-bottom:3rem;">
       <ion-scroll scrollY="true" class="h100">
         <page-member-sdc [hidden]="type!='sdc'"></page-member-sdc>
         <page-member-cbc [hidden]="type!='cbc'"></page-member-cbc>
