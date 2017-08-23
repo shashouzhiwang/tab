@@ -1,10 +1,41 @@
 $calendar-unit-height:4rem;
 $calendar-unit-width:8rem;
 .calendar{
+  ion-content{
+    .fixed-content{
+      margin-left: 0!important;
+    }
+    .scroll-content{
+      margin-left: 0!important;
+      width: 100%;
+      .calendar-row-title{
+        left: 0;
+      }
+      #gridster{
+        left:0;
+      }
+    }
+  }
+  #gridsterWarp {
+    width: calc(100% - 4rem);
+    .scroll-content{
+      overflow-x:scroll;
+    }
+  }
+  #titleWarp{
+    width: calc(100% - 4rem);
+  }
+  #timeWarp{
+    .scroll-content{
+      overflow-Y:hidden;
+    }
+  }
+}
+.calendar{
   overflow: scroll;
 	.calendar-row-title{
-		position:fixed;
-		left:$calendar-unit-width/2+10rem;
+		position:absolute;
+		left:$calendar-unit-width/2;
 		top:0;
 		    z-index: 22;
     		background: white;
@@ -24,7 +55,7 @@ $calendar-unit-width:8rem;
 		}
 	}
 
-	width:100%;
+	//width:100%;
 	height:100%;
 	.calendar-col-time{
 		width: $calendar-unit-width/2;

@@ -40,6 +40,7 @@ import { SelectTechniciansComponent } from "../pages/booking/pop-add-booking/sel
 import { SelectProjectComponent } from "../pages/booking/pop-add-booking/select-project/select-project.component"
 import { SelectMemberComponent } from "../pages/booking/pop-add-booking/select-member/select-member.component"
 import { SelectBedComponent } from "../pages/booking/pop-add-booking/select-bed/select-bed.component"
+import { EditBooking } from "../pages/booking/pop-add-booking/edit/edit-booking.component"
 //test
 // import 'hammerjs';
 // import {
@@ -75,6 +76,7 @@ import { TestGridster } from '../pages/booking/test/test.component';
     SelectProjectComponent,
     SelectMemberComponent,
     SelectBedComponent,
+    EditBooking,
 
     TestGridster,
     TabsPage
@@ -125,6 +127,7 @@ import { TestGridster } from '../pages/booking/test/test.component';
     SelectProjectComponent,
     SelectMemberComponent,
     SelectBedComponent,
+    EditBooking,
 
     TestGridster,
     TabsPage

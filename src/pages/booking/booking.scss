@@ -45,8 +45,11 @@
       }
     }
     position: absolute;
-    width: calc(100% - 0rem);
-    margin-left:10rem;
+    width: calc(100% - 10rem);
+    &.dk-collapse{
+      width: 100%;
+    }
+    margin-left:0rem;
     height: 100%;
     overflow: hidden;
     top: 0;

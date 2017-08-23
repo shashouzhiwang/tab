@@ -1,41 +1,48 @@
-<div class="dk-bookingContent h100">
+<div class="dk-bookingContent h100 dk-collapse">
   <div class="control-btn ub ub-pc" tappable (click)="collapse($event);">
     <i class="fc fc-left ub ub-ac"></i>
   </div>
   <div class="calendar ub" >
+<ion-content class="ub"  style="height: 3rem;width:4rem;position: absolute;top:0;left:0rem;z-index:22;">
 
-    <div class="calendar-row-title ub" style="width: 100%">
-      <div class="ub" [ngStyle]="{'left': gridLeft -5 +'px'}" style="position: relative;">
-        <div class="calendar-title ub ub-ac ub-ver"  *ngFor="let bedList of bed">
-          <div class="ub">{{bedList.name}}</div>
-          <div class="ub">{{bedList.number}}</div>
-        </div>
-      </div>
+</ion-content>
+<ion-content class="ub" id="titleWarp" style="height: 4rem;position: absolute;top:0;left:4rem;z-index:22;">
+  <div class="calendar-row-title ub" style="width: 100%">
+    <div class="calendar-title ub ub-ac ub-ver"  *ngFor="let bedList of bed">
+      <div class="ub">{{bedList.name}}</div>
+      <div class="ub">{{bedList.number}}</div>
     </div>
-    <div class="calendar-col-time ub ub-ver">
-      <div class="calendar-unit-time ub ub-ver" *ngFor="let item of timePeriod">
-        <div class="ub ub-pe ub-as">{{item.name}}</div>
-      </div>
+  </div>
+</ion-content>
+<ion-content class="ub" id="timeWarp" style="width:4rem;z-index:21;">
+  <div class="calendar-col-time ub ub-ver">
+    <div class="calendar-unit-time ub ub-ver" *ngFor="let item of timePeriod">
+      <div class="ub ub-pe ub-as">{{item.name}}</div>
     </div>
-      <gridster [options]="options" id="gridster" (pan)="panEvent($event);" [ngStyle]="{'left': gridLeft+'px'}" style="background-color: rgba(255,255,255,0.5);">
-          <div class="calendar-col-grid ub"  >
-            <div class="calendar-col first-col ub ub-ver"  *ngFor="let bedList of bed; let col = index" >
-            <div class="calendar-col-content">
-              <div class="calendar-unit" *ngFor="let item of timePeriod; let row = index"  >
-                <div (tab)="openModel($event,col,row*2);"></div>
-                <div (tab)="openModel($event,col,row*2+1);"></div>
-              </div>
+  </div>
+</ion-content>
+
+  <ion-content class="ub" id="gridsterWarp" (ionScroll)="scrollHandler($event)">
+    <gridster [options]="options" id="gridster" style="background-color: rgba(255,255,255,0.5);">
+      <div class="calendar-col-grid ub"  >
+        <div class="calendar-col first-col ub ub-ver"  *ngFor="let bedList of bed; let col = index" >
+          <div class="calendar-col-content">
+            <div class="calendar-unit" *ngFor="let item of timePeriod; let row = index"  >
+              <div (click)="openModel($event,col,row*2);"></div>
+              <div (click)="openModel($event,col,row*2+1);"></div>
             </div>
           </div>
         </div>
-        <gridster-item [item]="item" *ngFor="let item of dashboard" >
-          <div class="gridster-cell-warp" [ngStyle]="{'background-color':item.bgcolor,'color':item.color}">
-              <div class="gridster-cell">
-                10:00-12:00 床位1号陈小姐：去角质洗脸李医生；陈技师；黄护士
-              </div>
+      </div>
+      <gridster-item [item]="item" *ngFor="let item of dashboard" >
+        <div class="gridster-cell-warp" [ngStyle]="{'background-color':item.bgcolor,'color':item.color}">
+          <div class="gridster-cell">
+            10:00-12:00 床位1号陈小姐：去角质洗脸李医生；陈技师；黄护士
           </div>
-        </gridster-item>
-      </gridster>
+        </div>
+      </gridster-item>
+    </gridster>
+  </ion-content>
   </div>
 
 

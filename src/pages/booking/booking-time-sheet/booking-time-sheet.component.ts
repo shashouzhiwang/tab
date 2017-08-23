@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams, MenuController, App, Platform, ViewController,PopoverController, ModalController} from 'ionic-angular';
+import { Component, ViewChildren  } from '@angular/core';
+import { NavController, Content , NavParams, MenuController, App, Platform, ViewController,PopoverController, ModalController} from 'ionic-angular';
 import { GridsterConfig, GridsterItem}  from 'angular-gridster2';
 import { BookingRecording } from '../booking-recording/booking-recording.component';
 import { AddBooking } from "../pop-add-booking/add/add-booking.component"
@@ -16,6 +16,7 @@ import * as $ from 'jquery';
   templateUrl: 'booking-time-sheet.html'
 })
 export class BookingTimeSheetComponent {
+  @ViewChildren(Content) content: Content;
   options: GridsterConfig;
   dashboard: Array<GridsterItem>;
   addBookingPopover : any;
@@ -62,69 +63,6 @@ export class BookingTimeSheetComponent {
 
   static itemInit(item, itemComponent) {
     console.info('itemInitialized', item, itemComponent);
-
-    let startX, startY,startLeft,startTop;
-    let startLeftTitle;
-    let $grid = $("#gridster");
-    let $calendarGrid = $(".calendar-col-grid");
-    let $calendarTitle = $(".calendar-row-title");
-    let $calendarTime = $(".calendar-col-time");
-    let borderLeft = $grid.css('left');
-    let borderTop = $grid.css('top');
-    let $gridContent = $(".calendar-col-content");
-    //
-    // $calendarGrid
-    //   .on("touchstart", function(e) {
-    //     startX = e.originalEvent.changedTouches[0].pageX;
-    //     startY = e.originalEvent.changedTouches[0].pageY;
-    //     startLeft = $grid.css('left');
-    //     startTop = $grid.css('top');
-    //     startLeftTitle = $calendarTitle.css('left');
-    //     $grid.addClass('notransition');
-    //   })
-    //   .on("touchmove", function(e) {
-    //     // console.log(e.originalEvent,'move');
-    //     e.preventDefault();
-    //     let moveEndX = e.originalEvent.changedTouches[0].pageX;
-    //     let moveEndY = e.originalEvent.changedTouches[0].pageY;
-    //     let  X = moveEndX - startX;
-    //     let  Y = moveEndY - startY;
-    //     if ( Math.abs(X) > Math.abs(Y) && X > 0 ) {
-    //       if(parseFloat(startLeftTitle)+Math.abs(X) > parseFloat(borderLeft)){
-    //         $grid.css('left',parseFloat(borderLeft));
-    //         $calendarTitle.css('left',parseFloat(borderLeft));
-    //       }else{
-    //         $grid.css('left',parseFloat(startLeft)+Math.abs(X));
-    //         $calendarTitle.css('left',parseFloat(startLeftTitle)+Math.abs(X));
-    //       }
-    //     }
-    //     else if ( Math.abs(X) > Math.abs(Y) && X < 0 ) {
-    //       // console.log("right 2 left");
-    //       console.log(startLeft);
-    //       $grid.css('left',parseFloat(startLeft)-Math.abs(X));
-    //       $calendarTitle.css('left',parseFloat(startLeftTitle)-Math.abs(X));
-    //
-    //     }else if ( Y > 0) {
-    //       if(parseFloat(startTop)+Math.abs(Y)>parseFloat(borderTop)){
-    //         $grid.css('top',parseFloat(borderTop));
-    //         $calendarTime.css('top',parseFloat(borderTop));
-    //       }else{
-    //         $grid.css('top',parseFloat(startTop)+Math.abs(Y));
-    //         $calendarTime.css('top',parseFloat(startTop)+Math.abs(Y));
-    //       }
-    //
-    //     }
-    //     else if ( Y < 0 ) {
-    //       $grid.css('top',parseFloat(startTop)-Math.abs(Y));
-    //       $calendarTime.css('top',parseFloat(startTop)-Math.abs(Y));
-    //     }
-    //   })
-    //   .on("touchend",function(e){
-    //     $grid.removeClass('notransition');
-    //   })
-
-
-
   }
 
   emptyCellClick(event, item) {
@@ -168,7 +106,6 @@ export class BookingTimeSheetComponent {
   }
 
   ngOnInit() {
-
     this.options = {
       gridType: 'fixed',
       compactType: 'none',
@@ -242,6 +179,26 @@ export class BookingTimeSheetComponent {
       {cols: 1, rows: 1, y: 2, x: 2,resizeEnabled: true,bgcolor:BookingTimeSheetComponent.colorTimeSheet[0]["bgColor"],color:BookingTimeSheetComponent.colorTimeSheet[0]['color']}
     ];
   }
+
+  ngAfterViewInit(){
+    this.content = this.content["_results"];
+    // console.log(this.content["_results"][2]);
+
+  }
+
+  scrollHandler(event){
+    console.log(event);
+    if(event.scrollTop != 0) {
+      this.content[2].scrollTo(event.scrollLeft, event.scrollTop, 50);
+    }
+    if(event.scrollLeft != 0){
+      this.content[1].scrollTo(event.scrollLeft, event.scrollTop,50);
+    }
+  }
+  // scrollTimeHandler(event){
+  //   console.log(event);
+  //   // this.content[3].scrollTo(event.scrollLeft, event.scrollTop,50);
+  // }
 
   changedOptions() {
     this.options.api.optionsChanged();
@@ -341,17 +298,19 @@ export class BookingTimeSheetComponent {
       bookingContent.animate({
         marginLeft:'10rem'
       },300,function(){
-        bookingContent.siblings().show();
+        bookingContent.parent().siblings().show();
         bookingContent.removeClass("dk-collapse");
       })
     }else{
       bookingContent.animate({
         marginLeft:0
       },300,function(){
-        bookingContent.siblings().hide();
+        bookingContent.parent().siblings().hide();
         bookingContent.addClass("dk-collapse");
       })
     }
   }
+
+
 
 }
