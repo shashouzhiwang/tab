@@ -24,8 +24,8 @@
 
     <ion-col col-7 class="p_0 bgc-gray h100" style="padding-bottom:3rem;">
       <ion-scroll scrollY="true" class="h100">
-        <page-member-sdc [hidden]="type!='sdc'"></page-member-sdc>
-        <page-member-cbc [hidden]="type!='cbc'"></page-member-cbc>
+        <page-member-sdc [hidden]="type!='sdc'" [prepaidCards]="memberInfo.prepaidCards"></page-member-sdc>
+        <page-member-cbc *ngIf="type=='cbc'" [id]="memberInfo.id"></page-member-cbc>
         <page-member-edit [hidden]="type!='edit'"></page-member-edit>
       </ion-scroll>
     </ion-col>

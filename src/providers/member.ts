@@ -18,28 +18,36 @@ export class MemberService {
 
   //新增会员
   addMember(params:any){
-      return this.commonService.sendRequest('member/add', params)
+      return this.commonService.sendRequest('post','member/add', params)
       .then(res => res)
       .catch(this.handleError);
   }
 
-  //获取储蓄卡列表
-  getPrepaidCards(){
-    return this.commonService.sendRequest('prepaidCards',{})
-    .then(res => res)
-    .catch(this.handleError);
-  }
 
   //获取会员列表
   getMemberList(){
-    return this.commonService.sendRequest('member/list?shopId='+this.shopId,{})
+    return this.commonService.sendRequest('get','member/list?shopId='+this.shopId)
     .then(res => res)
     .catch(this.handleError);
   }
 
   //获取会员详情
   getMemberDetail(id:string){
-    return this.commonService.sendRequest('member/get?memberId='+id+'&shopId='+this.shopId,{})
+    return this.commonService.sendRequest('get','member/get?memberId='+id+'&shopId='+this.shopId)
+    .then(res => res)
+    .catch(this.handleError);
+  }
+
+  //获取该商店的会员等级
+  getMemberLevel(){
+    return this.commonService.sendRequest('get','member/queryLevel?shopId='+this.shopId)
+    .then(res => res)
+    .catch(this.handleError);
+  }
+
+  //获取套餐次卡
+  getComboCard(id:string){
+    return this.commonService.sendRequest('get','member/queryByMemberId?memberId='+id)
     .then(res => res)
     .catch(this.handleError);
   }

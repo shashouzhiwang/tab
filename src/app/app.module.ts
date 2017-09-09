@@ -1,6 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+// import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { DatePickerModule } from 'ng2-datepicker';
 import { MyApp } from './app.component';
@@ -86,7 +86,7 @@ import { TestGridster } from '../pages/booking/test/test.component';
     BrowserModule,
     DatePickerModule,
     GridsterModule,
-    BrowserAnimationsModule,
+    // BrowserAnimationsModule,
     // MdIconModule, MdButtonModule, MdSelectModule, MdInputModule, MdTooltipModule, MdCheckboxModule, MdSidenavModule,
     IonicModule.forRoot(MyApp,{
     //   backButtonIcon:'md-arrow-back',

@@ -29,11 +29,8 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col *ngIf="memberInfo.lastNurseDate!=0">
-        上次消费时间：{{memberInfo.lastNurseDate | date:"y-MM-dd"}}
-      </ion-col>
-      <ion-col *ngIf="memberInfo.lastNurseDate==0">
-        上次消费时间：暂未消费
+      <ion-col>
+        上次消费时间：{{memberInfo.lastConsumeAt==0?'':memberInfo.lastConsumeAt | date:"y-MM-dd"}}
       </ion-col>
       <ion-col>
       </ion-col>

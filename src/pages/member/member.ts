@@ -40,9 +40,10 @@ export class MemberPage {
     this.navCtrl.push(LoginPage);
   }
 
-  getMemberDetail(id:string){
+  getMemberDetail(id:string,lastConsumeAt:any){
     this.memberSer.getMemberDetail(id).then(res=>{
       this.memberInfo=res.member;
+      this.memberInfo.lastConsumeAt=lastConsumeAt;
     });
     this.id=id;
   }

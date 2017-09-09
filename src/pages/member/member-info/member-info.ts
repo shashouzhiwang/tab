@@ -6,7 +6,6 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'member-info.html'
 })
 export class MemberInfoPage {
-  id: number;
   type: string;
   memberInfo:any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
