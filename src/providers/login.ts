@@ -13,13 +13,13 @@ export class LoginService {
   }
 
   constructor(public commonService: CommonService, public storage: LocalStorageService) {
-      
+
   }
 
   //登陆
   login(params: any) {
     params.shopIdentity = "";
-    return this.commonService.sendRequest('auth/login', params)
+    return this.commonService.sendRequest('post','auth/login', params)
       .then(res => this.loginCallback(res))
       .catch(this.handleError);
   }

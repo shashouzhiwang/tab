@@ -29,13 +29,18 @@
 					<ion-col col-6>
 						<ion-item>
 							<ion-label floating>级别</ion-label>
-							<ion-input type="text"></ion-input>
+							<ion-select name="level" [(ngModel)]="memberInfo.level">
+								<ion-option [value]="l" *ngFor="let l of level">{{l.name}}</ion-option>
+							</ion-select>
 						</ion-item>
 					</ion-col>
 					<ion-col col-6>
 						<ion-item>
 							<ion-label floating>性别</ion-label>
-							<ion-input type="text" name="gendar" [(ngModel)]="memberInfo.gendar"></ion-input>
+							<ion-select name="gendar" [(ngModel)]="memberInfo.gendar">
+								<ion-option value="2">女</ion-option>
+								<ion-option value="1">男</ion-option>
+							</ion-select>
 						</ion-item>
 					</ion-col>
 					<!-- <ion-col col-6>
@@ -102,7 +107,10 @@
 					<ion-col col-6>
 						<ion-item>
 							<ion-label floating>婚否</ion-label>
-							<ion-input type="text" name="marriage" [(ngModel)]="memberInfo.marriage"></ion-input>
+							<ion-select name="gendar" [(ngModel)]="memberInfo.marriage">
+								<ion-option value="1">已婚</ion-option>
+								<ion-option value="0">未婚</ion-option>
+							</ion-select>
 						</ion-item>
 					</ion-col>
 					<ion-col col-6>
@@ -155,10 +163,34 @@
 										<ion-icon name="add-circle"></ion-icon>新增地址一</ion-label>
 								</ion-col>
 								<ion-col text-left class="pl0">
-									<ion-item>
-										<ion-label floating>省份</ion-label>
-										<ion-input type="text"></ion-input>
-									</ion-item>
+
+										<ion-row class="pl0">
+											<ion-col class="pl0 pr0">
+												<ion-item>
+													<ion-label floating>省份</ion-label>
+													<ion-select name="province" [(ngModel)]="provinceId" (ionChange)="chooseProvince()">
+														<ion-option *ngFor="let p of province" [value]="p.id">{{p.name}}</ion-option>
+													</ion-select>
+												</ion-item>
+											</ion-col>
+											<ion-col class="pl0 pr0" *ngIf="city && city.length>0">
+												<ion-item>
+													<ion-label floating>城市</ion-label>
+													<ion-select name="city" [(ngModel)]="cityId" (ionChange)="chooseCity()">
+														<ion-option *ngFor="let c of city" [value]="c.id">{{c.name}}</ion-option>
+													</ion-select>
+												</ion-item>
+											</ion-col>
+											<ion-col class="pl0 pr0" *ngIf="area && area.length>0">
+												<ion-item>
+													<ion-label floating>区</ion-label>
+													<ion-select name="area" [(ngModel)]="areaId">
+														<ion-option *ngFor="let a of area" [value]="a.id">{{a.name}}</ion-option>
+													</ion-select>
+												</ion-item>
+											</ion-col>
+										</ion-row>
+
 									<ion-item>
 										<ion-label floating>详细地址</ion-label>
 										<ion-input type="text"></ion-input>
@@ -195,12 +227,12 @@
 						<ion-item>
 							<ion-label floating>到店途径</ion-label>
 							<ion-select name="channel" [(ngModel)]="memberInfo.channel">
-								<ion-option>朋友介绍</ion-option>
-								<ion-option>会员介绍</ion-option>
-								<ion-option>路过</ion-option>
-								<ion-option>杂志</ion-option>
-								<ion-option>广告</ion-option>
-								<ion-option>其他</ion-option>
+								<ion-option value="{'key':'1','value':'朋友介绍'}">朋友介绍</ion-option>
+								<ion-option value="{'key':'2','value':'会员介绍'}">会员介绍</ion-option>
+								<ion-option value="{'key':'3','value':'路过'}">路过</ion-option>
+								<ion-option value="{'key':'4','value':'杂志'}">杂志</ion-option>
+								<ion-option value="{'key':'5','value':'广告'}">广告</ion-option>
+								<ion-option value="{'key':'6','value':'其他'}">其他</ion-option>
 							</ion-select>
 						</ion-item>
 					</ion-col>
@@ -220,9 +252,9 @@
 						<ion-item>
 							<ion-label floating>护理状况</ion-label>
 							<ion-select name="nurse" [(ngModel)]="memberInfo.nurse">
-								<ion-option>从未</ion-option>
-								<ion-option>偶尔</ion-option>
-								<ion-option>经常</ion-option>
+								<ion-option value="{'key':'1','value':'从未'}">从未</ion-option>
+								<ion-option value="{'key':'2','value':'偶尔'}">偶尔</ion-option>
+								<ion-option value="{'key':'3','value':'经常'}">经常</ion-option>
 							</ion-select>
 						</ion-item>
 					</ion-col>
@@ -257,5 +289,5 @@
 				</ion-row>
 			</ion-card>
 		</ion-grid>
-		</form>
+	</form>
 </ion-content>

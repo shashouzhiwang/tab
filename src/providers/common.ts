@@ -40,9 +40,11 @@ export class CommonService {
   }
 
 
-  sendRequest(requestUrl: string, params: any): Promise<any> {
+  sendRequest( type: string = 'post',requestUrl: string, params: any={}, token: boolean = true): Promise<any> {
     return this.getNewToken().then((res: any) => {
-      params.token = JSON.parse(res._body).token;
+      if (token) {
+        params.token = res.token;
+      }
       let requestBody = JSON.stringify(params);
 
       let tokenHeader = this.buildTokenHeader();
@@ -50,12 +52,25 @@ export class CommonService {
       this.headers.set(tokenHeader.name, tokenHeader.value);
       this.headers.append('shop', shopHeader);
       let requestOptions = new RequestOptions({ headers: this.headers });
-      return this.http.post(this.apiUrl + requestUrl, requestBody, requestOptions)
-        .toPromise()
-        .then(res => this.responseCallback(res.json()))
-        .catch(this.handleError);
+      if (type == 'post') {
+        return this.http.post(this.apiUrl + requestUrl, requestBody, requestOptions)
+          .toPromise()
+          .then(res => this.responseCallback(res.json()))
+          .catch(this.handleError);
+      }else{
+        return this.http.get(this.apiUrl + requestUrl, requestOptions)
+          .toPromise()
+          .then(res => this.responseCallback(res.json()))
+          .catch(this.handleError);
+      }
     });
+
+
+
   }
+
+
+
 
   responseCallback(res: any): void {
     //请求不正确时提示错误信息
@@ -87,7 +102,31 @@ export class CommonService {
   getNewToken() {
     return this.http.get(this.apiUrl + 'token', {})
       .toPromise()
-      .then(res => res)
+      .then((res: any) => JSON.parse(res._body))
+      .catch(this.handleError);
+  }
+
+  //获取省份
+  getProvince() {
+    return this.http.get(this.apiUrl + 'cities/%2f/1', {})
+      .toPromise()
+      .then((res: any) => JSON.parse(res._body))
+      .catch(this.handleError);
+  }
+
+  //获取市
+  getCity(id: number) {
+    return this.http.get(this.apiUrl + 'cities/%2f' + id + '/2', {})
+      .toPromise()
+      .then((res: any) => JSON.parse(res._body))
+      .catch(this.handleError);
+  }
+
+  //获取区
+  getArea(pid: number, cid: number) {
+    return this.http.get(this.apiUrl + 'cities/%2f' + pid + '%2f' + cid + '/3', {})
+      .toPromise()
+      .then((res: any) => JSON.parse(res._body))
       .catch(this.handleError);
   }
 
@@ -108,15 +147,15 @@ export class CommonService {
   //获取当天日期  返回格式2017-01-01
   getTodayDate() {
     let date = new Date();
-    let y=date.getFullYear();
-    let m=date.getMonth()+1;
-    let d=date.getDate();
-    return  y+"-"+(m<10?"0":"")+m+"-"+(d<10?"0":"")+d;
+    let y = date.getFullYear();
+    let m = date.getMonth() + 1;
+    let d = date.getDate();
+    return y + "-" + (m < 10 ? "0" : "") + m + "-" + (d < 10 ? "0" : "") + d;
   }
 
   //日期格式2017-01-01 00:00:00 转化为时间戳
-  turnDate(date:string){
-    let d=new Date(date);
+  turnDate(date: string) {
+    let d = new Date(date);
     return d.getTime();
   }
 }

@@ -1,33 +1,17 @@
 <ion-grid>
-	<ion-card>
+	<ion-card *ngFor="let list of prepaidCards">
 		<ion-card-content text-left>
 			<ion-row>
 				<ion-col col-8>
-					<span class="color_blue" style="font-size:1.05rem">国庆储值卡A</span>
+					<span class="color_blue" style="font-size:1.05rem">{{list.name}}</span>
 				</ion-col>
 			</ion-row>
 			<ion-row>
 				<ion-col><span class="color_gray">服务项目：5折；购买产品：8.5折；购买套餐：无折</span></ion-col>
 			</ion-row>
 			<ion-row>
-				<ion-col>充值余额：￥50000.00</ion-col>
-				<ion-col>赠送余额：￥300.00</ion-col>
-			</ion-row>
-		</ion-card-content>
-	</ion-card>
-	<ion-card>
-		<ion-card-content text-left>
-			<ion-row>
-				<ion-col col-8>
-					<span class="color_blue" style="font-size:1.05rem">新春五折卡</span>
-				</ion-col>
-			</ion-row>
-			<ion-row>
-				<ion-col><span class="color_gray">服务项目：5折；购买产品：8.5折；购买套餐：无折</span></ion-col>
-			</ion-row>
-			<ion-row>
-				<ion-col>充值余额：￥10000.00</ion-col>
-				<ion-col>赠送余额：￥0.00</ion-col>
+				<ion-col>充值余额：￥{{list.usableChargeAmount}}</ion-col>
+				<ion-col>赠送余额：￥{{list.usableGiftAmount}}</ion-col>
 			</ion-row>
 		</ion-card-content>
 	</ion-card>

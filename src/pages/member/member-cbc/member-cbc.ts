@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { MemberService } from '../../../providers/member';
 
 @Component({
   selector: 'page-member-cbc',
@@ -7,10 +8,27 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class MemberCbcPage {
   cdcList:any=[];
-  id: number;
-  constructor(public navCtrl: NavController,public navParams: NavParams) {
-    this.id = this.navParams.get('id');
-    this.cdcList=[{showUseDetail:false},{showUseDetail:false}]
+  _id:string;
+  @Input() set id(id:string){
+    this._id=id;
+      this.getComboCard();
+  };
+  get id(): string { return this._id; }
+
+  constructor(public navCtrl: NavController,public navParams: NavParams,public memberSer: MemberService) {
+
   }
 
+
+  getComboCard(){
+    this.memberSer.getComboCard(this._id).then(res=>{
+      if(res && res.data && res.data.length>0){
+        this.cdcList=res.data;
+        for(let i=0;i<this.cdcList.length;i++){
+          this.cdcList[i].showUseDetail=false;
+        }
+      }
+      console.log(this.cdcList,22);
+    });
+  }
 }

@@ -45,7 +45,7 @@
         <ion-col col-8 class="h100">
           <ion-scroll scrollY="true" class="w100 h100">
             <ion-list class="member-list">
-              <ion-item *ngFor="let list of memberList" class="list-title" [ngClass]="{'active':id==list.id}" (click)="getMemberDetail(list.id)">
+              <ion-item *ngFor="let list of memberList" class="list-title" [ngClass]="{'active':id==list.id}" (click)="getMemberDetail(list.id,list.lastConsumeAt)">
                 <ion-row>
                   <span>
                   {{list.name}}
@@ -54,11 +54,11 @@
                   {{list.phoneNo}}
                 </span>
                   <span>
-                  vip
+                  {{list.level.name}}
                 </span>
                 </ion-row>
                 <ion-row text-left class="time">
-                  上次消费时间：{{list.lastNurseDate==0?'':list.lastNurseDate | date:"y-MM-dd"}}
+                  上次消费时间：{{list.lastConsumeAt==0?'':list.lastConsumeAt | date:"y-MM-dd"}}
                 </ion-row>
               </ion-item>
             </ion-list>
