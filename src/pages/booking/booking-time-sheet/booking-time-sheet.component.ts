@@ -195,6 +195,8 @@ export class BookingTimeSheetComponent {
       this.content[1].scrollTo(event.scrollLeft, event.scrollTop,50);
     }
   }
+
+
   // scrollTimeHandler(event){
   //   console.log(event);
   //   // this.content[3].scrollTo(event.scrollLeft, event.scrollTop,50);
